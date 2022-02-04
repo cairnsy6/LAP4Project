@@ -19,13 +19,11 @@ from rest_framework import routers
 from server import views
 
 router = routers.DefaultRouter()
-router.register(r'server', views.UserView, 'users')
-router.register(r'server', views.CompetitionView, 'competitions')
-router.register(r'server', views.ScoreSerializer, 'scores')
+router.register(r'users', views.UserView, 'users')
+router.register(r'competitions', views.CompetitionView, 'competitions')
+router.register(r'scores', views.ScoreSerializer, 'scores')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include(router.urls)),
-    path('competitions', include(router.urls)),
-    path('scores', include(router.urls))
+    path('/', include(router.urls))
 ]
