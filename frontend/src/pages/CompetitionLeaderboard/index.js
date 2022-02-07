@@ -55,10 +55,20 @@ function CompetitionLeaderboard() {
               <p>Add to your score:</p>
               {competition.competition_type === 1 && (
                 <form>
-                  <input type="submit" />
+                  <label htmlFor="score-update">
+                    Did you achieve the goal of {competition.units} today?
+                  </label>
+                  <input type="checkbox" name="score-update" required />
+                  <input type="submit" value="Update score" />
                 </form>
               )}
-              {competition.competition_type === 2 && <form></form>}
+              {competition.competition_type === 2 && (
+                <form>
+                  <label htmlFor="score-update">Add {competition.units}</label>
+                  <input type="number" name="score-update" required />
+                  <input type="submit" value="Update score" />
+                </form>
+              )}
               <h3>Leaderboard</h3>
               <ol>
                 <li>Gary : 200</li>

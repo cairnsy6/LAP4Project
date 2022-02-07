@@ -1,7 +1,7 @@
 import React from "react";
 import { NavBar } from "../../components";
 import { useNavigate } from "react-router";
-
+import "./style.css";
 function Register() {
   const navigate = useNavigate();
 
@@ -33,9 +33,10 @@ function Register() {
     }
   };
   return (
-    <div>
+    <div className="registerDiv">
       <NavBar />
-      <h1>Register</h1>
+      <h1 id="homeTitle">Planet Pals</h1>
+      <h2>Register</h2>
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="username">Name</label>
         <input type="text" name="username" id="username" />
@@ -60,9 +61,13 @@ function Register() {
           id="business-account"
           value="business-account"
         />
-
+        <br />
         <input type="submit" value="Register" />
       </form>
+      <p onClick={() => navigate("/login")}>
+        {" "}
+        Already have an account? Click here to login
+      </p>
     </div>
   );
 }

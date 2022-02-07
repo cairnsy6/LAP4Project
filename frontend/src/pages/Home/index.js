@@ -12,10 +12,24 @@ function Home() {
 
       <h1 id="homeTitle">Planet Pals</h1>
       <div>Slogan</div>
-      <button id="login-btn" onClick={() => navigate("/login")}>
+
+      <button
+        type="button"
+        class="btn btn-primary btn-lg btn-block"
+        id="login-btn"
+        onClick={() => navigate("/login")}
+      >
         Login
       </button>
-      <button onClick={() => navigate("/register")}>Register</button>
+      <br />
+      <button
+        type="button"
+        class="btn btn-primary btn-lg btn-block"
+        id="register-btn"
+        onClick={() => navigate("/register")}
+      >
+        Register
+      </button>
     </div>
   );
 }
