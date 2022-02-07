@@ -1,0 +1,23 @@
+#navBar {
+  padding-bottom: 2%;
+}
+
+nav > a {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+#homeIcon {
+  color: #31351a;
+}
+#aboutIcon {
+  color: #31351a;
+}
+#profileIcon {
+  color: #31351a;
+}
+#competitionsIcon {
+  color: #31351a;
+}
+#loginIcon {
+  color: #31351a;
+}

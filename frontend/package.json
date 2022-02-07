@@ -1,0 +1,40 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-cli serve --mode development --config config/webpack.config.dev.js",
+    "build": "webpack --config config/webpack.config.production.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.17.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.3.1",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hooks-use-modal": "^2.1.0",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
+  }
+}

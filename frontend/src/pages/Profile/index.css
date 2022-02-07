@@ -1,0 +1,23 @@
+.profile-name {
+  color: red;
+  text-align: center;
+}
+
+.competition-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+  /* flex-direction: column;
+  align-items: flex-start; */
+  background-color: green;
+}
+
+#achievements {
+  margin-top: 100px;
+}
+
+#create {
+  margin-top: 100px;
+}
