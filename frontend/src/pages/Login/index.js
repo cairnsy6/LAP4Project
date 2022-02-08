@@ -54,13 +54,13 @@ function Login() {
       const data = await response.json();
       console.log("login data", data);
       // dispatch(requestLogin(userLogin));
-      if (!data.success) {
+      if (!data.token) {
         dispatch({
           type: "ERROR",
           payload: "Login not authorised",
         });
       } else {
-        dispatch(login(data.user));
+        dispatch(login(data.token));
       }
 
       // navigate(`/profile`, { replace: true });
@@ -70,7 +70,7 @@ function Login() {
   };
 
   return (
-    <main className="loginmain">
+    <main className="loginmain" aria-label="loginmain">
       <NavBar />
       <div className="loginbody">
         <form onSubmit={handleFormSubmit}>

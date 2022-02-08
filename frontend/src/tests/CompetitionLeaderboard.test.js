@@ -4,23 +4,24 @@
 
 import React from "react";
 import { screen, render } from "@testing-library/react";
-import Home from "../pages/Home/index";
-import { Provider, useDispatch } from "react-redux";
-import { store } from "../redux/store/store";
-import { BrowserRouter, Route, Routes, Router } from "react-router-dom";
+import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 
-describe("Home", () => {
+import { CompetitionLeaderboard } from "../pages";
+import { store } from "../redux/store/store";
+
+describe("CompetitionLeaderboard", () => {
   beforeEach(() => {
     render(
       <Provider store={store}>
-        <Home />
+        <CompetitionLeaderboard />
       </Provider>,
       { wrapper: MemoryRouter }
     );
   });
+
   test("it renders the home page", () => {
-    const about = screen.getByLabelText("Home");
-    expect(about).toBeTruthy();
+    const leaderboard = screen.getByLabelText("leaderboard");
+    expect(leaderboard).toBeTruthy();
   });
 });

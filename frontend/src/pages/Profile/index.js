@@ -26,7 +26,7 @@ function Profile() {
   // return <p>{c.name}</p>
   //   })
   return (
-    <div className="profile-page">
+    <div className="profile-page" aria-label="Profile">
       <NavBar />
       <h1 id="nameTitle" className="profile-name">
         Name:{userDetails.username}

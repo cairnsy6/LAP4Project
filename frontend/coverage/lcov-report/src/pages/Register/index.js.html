@@ -148,7 +148,14 @@
 <a name='L83'></a><a href='#L83'>83</a>
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,7 +165,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -175,14 +182,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,20 +191,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -260,7 +274,7 @@ function Register() {
           password: e.target.password.value,
           email: e.target.email.value,
         };
-<span class="cstat-no" title="statement not covered" >        console.log(user);</span>
+        // console.log(user);
         const options = <span class="cstat-no" title="statement not covered" >{</span>
           method: "POST",
           headers: { "Content-type": "application/json" },
@@ -269,21 +283,23 @@ function Register() {
 &nbsp;
         const response = <span class="cstat-no" title="statement not covered" >await fetch(`${URL}/register/`, options);</span>
         const data = <span class="cstat-no" title="statement not covered" >await response.json();</span>
+<span class="cstat-no" title="statement not covered" >        console.log("data from register", data);</span>
 &nbsp;
         // if (data.err) {
         //   throw Error(data.err);
         // }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!data.success) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!data.token) {</span>
 <span class="cstat-no" title="statement not covered" >          dispatch({</span>
             type: "ERROR",
             payload: "Login not authorised",
           });
+<span class="cstat-no" title="statement not covered" >          console.log("there was an error");</span>
         } else {
-<span class="cstat-no" title="statement not covered" >          dispatch(login(data.token));</span>
+<span class="cstat-no" title="statement not covered" >          dispatch(login(data.user));</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        navigate(`/profile`, { replace: true });</span>
+        // navigate(`/profile`, { replace: true });
       } catch (error) {
 <span class="cstat-no" title="statement not covered" >        console.warn(error);</span>
       }
@@ -295,7 +311,6 @@ function Register() {
       &lt;h1 id="registerTitle"&gt;Planet Pals&lt;/h1&gt;
       &lt;div&gt;Slogan&lt;/div&gt;
       &lt;h2&gt;Register&lt;/h2&gt;
-&nbsp;
       &lt;form onSubmit={handleFormSubmit} aria-label="register-form"&gt;
         &lt;label htmlFor="username"&gt;Name&lt;/label&gt;
         &lt;input type="username" name="username" id="username" /&gt;
@@ -308,7 +323,13 @@ function Register() {
 &nbsp;
         {error &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p&gt;{error}&lt;/p&gt;}</span>
 &nbsp;
-        &lt;input type="submit" value="Register" aria-label="register-button" /&gt;
+        &lt;input
+          id="regbutton"
+          className="btn-success btn btn-lg"
+          type="submit"
+          value="Register"
+          aria-label="register-button"
+        /&gt;
       &lt;/form&gt;
       &lt;p onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigate("/login")}</span>&gt;
         Already have an account? Click here to login
@@ -325,7 +346,7 @@ export default Register;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Feb 08 2022 16:46:23 GMT+0000 (Greenwich Mean Time)
+                at Tue Feb 08 2022 17:59:04 GMT+0000 (Greenwich Mean Time)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

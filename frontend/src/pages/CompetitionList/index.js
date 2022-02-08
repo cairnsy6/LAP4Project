@@ -67,7 +67,9 @@ function CompetitionList() {
           </button>
         </div>
       </ModalNotLoggedIn>
-      <h2 id="publicComps">Public Competitions</h2>
+      <h2 id="publicComps" aria-label="competition-list">
+        Public Competitions
+      </h2>
       {competitions.length ? (
         compList
       ) : (
