@@ -39,7 +39,7 @@ describe("Register", () => {
   });
 
   it("has a submit button", () => {
-    const button = screen.getByLabelText("register-button");
+    const button = screen.getByLabelText("regiaster-button");
     expect(button).toBeTruthy();
   });
 });
