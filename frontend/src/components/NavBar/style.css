@@ -1,0 +1,33 @@
+#navBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  /* gap: 10px; */
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: #a1aea7;
+}
+
+nav > a {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+#homeIcon {
+  color: #31351a;
+}
+#aboutIcon {
+  color: #31351a;
+}
+#profileIcon {
+  color: #31351a;
+}
+#competitionsIcon {
+  color: #31351a;
+}
+#loginIcon {
+  color: #31351a;
+}
+#logoutIcon {
+  color: #31351a;
+}
