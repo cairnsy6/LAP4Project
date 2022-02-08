@@ -1,0 +1,17 @@
+ul {
+  margin-left: 25%;
+  margin-right: 25%;
+  color: white;
+}
+
+#competitionDate {
+  font-style: italic;
+  font-size: 75%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#competitionName:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

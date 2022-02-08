@@ -1,0 +1,59 @@
+#competitionDiv {
+  background-image: url("https://static01.nyt.com/images/2020/02/12/opinion/12Ellis/12Ellis-superJumbo.jpg");
+  background-size: cover;
+  background-position: center fixed;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: bisque;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+
+#competitionListTitle {
+  padding-bottom: 1.25%;
+}
+#createCompButton {
+  width: 80%;
+  border-radius: 10px;
+  height: 10%;
+  background-color: #737c47;
+  border-color: #171e14;
+  cursor: pointer;
+  text-align: center;
+}
+
+#createCompButton:hover {
+  opacity: 0.9;
+}
+
+#createCompButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#createCompButton span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#createCompButton:hover span {
+  padding-right: 15px;
+}
+
+#createCompButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#publicComps {
+  padding-top: 3%;
+  text-decoration: underline;
+}
