@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/competitions" element={<CompetitionList />} />

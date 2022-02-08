@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { NavBar } from "../../components";
-
+import "./style.css";
 function About() {
   return (
-    <div>
+    <div id="aboutDiv">
       <NavBar />
-      <h2>About Us</h2>
-      <p>
-        Hellooooo, welcome to the Planet Pals. Tired of causing death and
-        despair to our beloved planet?
-        <br />
-        Worried about the world you will be leaving your children? <br /> Do you
-        just need something to live for? <br /> Well fear not, because we can
-        make all your troubles (and carbon footprint) fade away!
-      </p>
+      <div id="innerDiv">
+        <h2 id="aboutTitle" aria-label="About">
+          About Us
+        </h2>
+        <p>
+          Hellooooo, welcome to the Planet Pals. Tired of causing death and
+          despair to our beloved planet?
+          <br />
+          Worried about the world you will be leaving your children? <br /> Do
+          you just need something to live for? <br /> Well fear not, because we
+          can make all your troubles (and carbon footprint) fade away!
+        </p>
+      </div>
     </div>
   );
 }

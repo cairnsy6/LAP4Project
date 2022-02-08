@@ -1,0 +1,44 @@
+.loginmain {
+  background-image: url("https://static01.nyt.com/images/2020/02/12/opinion/12Ellis/12Ellis-superJumbo.jpg");
+  background-size: cover;
+  background-position: center fixed;
+  height: 100vh;
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.loginbody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a1aea7;
+  padding: 80px 50px;
+  margin: 10px;
+  border-radius: 10px;
+
+  color: white;
+  /* padding: 50px; */
+}
+
+.loginForm {
+  color: blue;
+  display: flex;
+  align-items: center;
+}
+
+.loginInputLabel {
+}
+
+#submit-btn {
+  color: red;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgb(198, 182, 182);
+}
+#loginTitle {
+  text-align: center;
+  font-size: 80px;
+  margin-top: -40px;
+  margin-bottom: 50px;
+}

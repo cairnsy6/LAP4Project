@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { useModal } from "react-hooks-use-modal";
 import { useSelector } from "react-redux";
 
+import { URL } from "../../serverUrl";
 import { CompetitionListItem, NavBar } from "../../components";
 import "./style.css";
 
@@ -17,9 +18,7 @@ function CompetitionList() {
 
   const fetchCompetitions = async () => {
     try {
-      const response = await fetch(
-        "https://test-django-34.herokuapp.com/competitions"
-      );
+      const response = await fetch(`${URL}/competitions/public`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -49,12 +48,13 @@ function CompetitionList() {
   ) : (
     <></>
   );
-
   return (
-    <>
+    <div id="competitionDiv">
       <NavBar />
-      <h1>Public Competitions</h1>
-      <button onClick={handleCreate}>Create a competition</button>
+      <h1 id="competitionListTitle">Competitions</h1>
+      <button id="createCompButton" onClick={handleCreate}>
+        <span>Create a competition</span>
+      </button>
 
       <ModalNotLoggedIn>
         <div className="pop-up">
@@ -67,7 +67,7 @@ function CompetitionList() {
           </button>
         </div>
       </ModalNotLoggedIn>
-
+      <h2 id="publicComps">Public Competitions</h2>
       {competitions.length ? (
         compList
       ) : (
@@ -76,7 +76,7 @@ function CompetitionList() {
           create one of your own!
         </p>
       )}
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,12 @@
 #navBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  /* gap: 10px; */
+  padding-top: 2%;
   padding-bottom: 2%;
+  background-color: #a1aea7;
 }
 
 nav > a {
@@ -19,5 +26,8 @@ nav > a {
   color: #31351a;
 }
 #loginIcon {
+  color: #31351a;
+}
+#logoutIcon {
   color: #31351a;
 }

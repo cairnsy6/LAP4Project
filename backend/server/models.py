@@ -16,9 +16,9 @@ class Competition(models.Model):
     name = models.CharField(max_length=120, unique=True)
     description = models.CharField(max_length=500)
     units = models.CharField(max_length=100)
-    frequency = models.CharField(max_length=100)
-    type_of_competition = models.IntegerField(max=2)
-    end_date = models.DateField(null=False)
+    frequency = models.CharField(max_length=100) # daily or rolling total
+    type_of_competition = models.IntegerField(max=2) # 1 = public, 2 = private
+    end_date = models.DateField(null=False) # YYYY-MM-DD
     host_id = models.ForeignKey(User.id)
     completed = models.BooleanField(default=False)
 

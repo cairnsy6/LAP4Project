@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { useModal } from "react-hooks-use-modal";
 
+import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
 import "./style.css";
 
@@ -23,20 +24,19 @@ function CreateCompetition() {
     try {
       const bodyObject = Object.fromEntries(new FormData(e.target));
       bodyObject["type_of_competition"] = 1;
-      bodyObject["host_id"] = 3; // GET USER ID
+      bodyObject["host_id"] = userDetails.id; // GET USER ID
       bodyObject["completed"] = "False";
       bodyObject["frequency"] = parseInt(bodyObject["frequency"]);
       const options = {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json",
+          Authorization: "Authentication",
         }),
+        //need to add the token into the headers
         body: JSON.stringify(bodyObject),
       };
-      const response = await fetch(
-        "https://test-django-34.herokuapp.com/competitions/",
-        options
-      );
+      const response = await fetch(`${URL}/competitions/`, options);
       const data = await response.json();
       navigate(`/competition/${data.id}`);
     } catch (error) {
@@ -45,7 +45,7 @@ function CreateCompetition() {
   };
 
   return (
-    <>
+    <div id="createCompDiv">
       <NavBar />
       <h1>Create Competition </h1>
       <form onSubmit={handleFormSubmit}>
@@ -93,7 +93,7 @@ function CreateCompetition() {
         </p>
         <button onClick={closeFrequencyHelp}>Close</button>
       </FrequencyHelp>
-    </>
+    </div>
   );
 }
 

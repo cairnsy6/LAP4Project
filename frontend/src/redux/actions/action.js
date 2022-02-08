@@ -1,4 +1,5 @@
 import jwt_decode from "jwt-decode";
+import { URL } from "../../serverUrl";
 
 export const login = (token) => {
   return async (dispatch) => {
@@ -19,6 +20,8 @@ export const login = (token) => {
   };
 };
 
+// can maybe comment out this function -
+// error handling and disptch(login) is moved to login/register files
 export const requestLogin = (userData) => {
   return async (dispatch) => {
     try {
@@ -28,7 +31,7 @@ export const requestLogin = (userData) => {
         body: JSON.stringify(userData),
       };
 
-      const response = await fetch(`http://test-django-34.herokuapp.com/users`);
+      const response = await fetch(`${URL}/users`);
       const data = await response.json();
 
       //error handling

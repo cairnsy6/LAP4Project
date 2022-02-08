@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
+
+import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
 
 function EditProfile() {
@@ -11,25 +13,26 @@ function EditProfile() {
     e.preventDefault();
 
     const form = e.target;
-    try {
-      const options = {
-        method: "POST",
-        body: {
-          username: form.username.value,
-          password: form.password.value,
-          confirmpassword: form.confirmpassword.value,
-        },
-        headers: { "Content-type": "application/json" },
-      };
-      const response = await fetch(
-        `http://test-django-34.herokuapp.com/users/${id}`,
-        options
-      );
-      const data = await response.json();
-      // do I need to convert it to json when I'm not displaying it? ^
-      navigate(`/profile`, { replace: true });
-    } catch (error) {
-      console.warn(error);
+
+    if (form.password.value !== form.confirmpassword.value) {
+      setError("Please ensure your passwords match");
+    } else {
+      try {
+        const options = {
+          method: "POST",
+          body: {
+            username: form.username.value,
+            password: form.password.value,
+          },
+          headers: { "Content-type": "application/json" },
+        };
+        const response = await fetch(`${URL}/users/${id}`, options);
+        const data = await response.json();
+        // do I need to convert it to json when I'm not displaying it? ^
+        navigate(`/profile`, { replace: true });
+      } catch (error) {
+        console.warn(error);
+      }
     }
   };
   // check the body keys in right format (server)
