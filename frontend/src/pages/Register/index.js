@@ -60,7 +60,7 @@ function Register() {
     <div className="registerDiv">
       <NavBar />
       <h1 id="registerTitle">Planet Pals</h1>
-      <div>Slogan</div>
+      <h4 id="slogan">Saving The World, One Competition At A Time</h4>
       <h2>Register</h2>
       <form onSubmit={handleFormSubmit} aria-label="register-form">
         <label htmlFor="username">Name</label>
@@ -74,6 +74,7 @@ function Register() {
 
         {error && <p>{error}</p>}
 
+
         <input
           id="regbutton"
           className="btn-success btn btn-lg"
@@ -81,6 +82,7 @@ function Register() {
           value="Register"
           aria-label="register-button"
         />
+
       </form>
       <p onClick={() => navigate("/login")}>
         Already have an account? Click here to login
