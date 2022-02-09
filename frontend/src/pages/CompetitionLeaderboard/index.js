@@ -20,6 +20,7 @@ function CompetitionLeaderboard() {
   const [totalInput, setTotalInput] = useState("");
   const [showManage, setShowManage] = useState(false);
   const [userToDeleteDetails, setUserToDeleteDetails] = useState();
+  const [isUserHost, setIsUserHost] = useState(false);
 
   const [
     LeaveCompetitionWarning,
@@ -57,11 +58,14 @@ function CompetitionLeaderboard() {
         `${URL}/competitions/${ID}/get_leaderboard`,
         options
       );
+
       if (!response.ok) {
         setCompError(true);
         return;
       } else {
         const data = await response.json();
+
+        userDetails.id === data.host_id && setIsUserHost(true);
         return data;
       }
     } catch (error) {
@@ -172,6 +176,8 @@ function CompetitionLeaderboard() {
       };
       const response = await fetch(`${URL}/scores/`, options);
       const data = await response.json();
+      setIsUserInCompetition(true);
+      setUserScoreObject(data);
       console.log(data);
     } catch (error) {
       console.warn(error);
@@ -271,14 +277,19 @@ function CompetitionLeaderboard() {
           )}
         </>
       )}
-      <button
-        onClick={() => {
-          setShowManage(!showManage);
-        }}
-      >
-        Manage participants
-      </button>
-      <div>{showManage && manage}</div>
+      {isUserHost && (
+        <div>
+          <button
+            onClick={() => {
+              setShowManage(!showManage);
+            }}
+          >
+            Manage participants
+          </button>
+          <div>{showManage && manage}</div>
+        </div>
+      )}
+
       <LeaveCompetitionWarning>
         <p>Are you sure you want to leave the competition?</p>
         <button onClick={closeLeaveCompetitionWarning}>Cancel</button>
