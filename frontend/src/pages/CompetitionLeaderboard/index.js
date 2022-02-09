@@ -35,6 +35,14 @@ function CompetitionLeaderboard() {
       preventScroll: true,
       closeOnOverlayClick: true,
     });
+  const [
+    DeleteCompetitionWarning,
+    openDeleteCompetitionWarning,
+    closeDeleteCompetitionWarning,
+  ] = useModal("root", {
+    preventScroll: true,
+    closeOnOverlayClick: true,
+  });
 
   const navigate = useNavigate();
 
@@ -204,6 +212,25 @@ function CompetitionLeaderboard() {
     <></>
   );
 
+  const handleDeleteCompetition = async () => {
+    try {
+      const options = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+      };
+      const res = await fetch(`${URL}/competitions/${ID}`, options);
+      console.log(res);
+      // const dta = await res.json();
+      // console.log(dta);
+      navigate(`/profile`);
+    } catch (error) {
+      console.warn(error);
+    }
+  };
+
   return (
     <div id="competitionLeaderboardDiv" aria-label="leaderboard">
       <NavBar />
@@ -287,16 +314,33 @@ function CompetitionLeaderboard() {
             Manage participants
           </button>
           <div>{showManage && manage}</div>
+          <button onClick={() => openDeleteCompetitionWarning()}>
+            Delete Competition
+          </button>
         </div>
       )}
+      <DeleteCompetitionWarning>
+        <p>Are you sure you want to delete this competition?</p>
+        <button onClick={closeDeleteCompetitionWarning}>Cancel</button>
+        <button
+          onClick={() => {
+            closeDeleteCompetitionWarning();
+            handleDeleteCompetition();
+          }}
+        >
+          Delete
+        </button>
+      </DeleteCompetitionWarning>
+
+      {/* Bethan */}
 
       <LeaveCompetitionWarning>
         <p>Are you sure you want to leave the competition?</p>
         <button onClick={closeLeaveCompetitionWarning}>Cancel</button>
         <button
           onClick={() => {
-            handleUserLeavingComp(userScoreObject);
             closeLeaveCompetitionWarning();
+            handleUserLeavingComp(userScoreObject);
           }}
         >
           Leave
