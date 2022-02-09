@@ -43,9 +43,8 @@ function CompetitionListItem({ competition, inComp }) {
 
   return (
     <div role="CompetitionListItem">
-      <ul>
-        <li>
-          <h3>
+        
+          <h3 id="h3item">
             <span
               id="competitionTitle"
               onClick={() => navigate(`/competition/${competition.id}`)}
@@ -62,8 +61,8 @@ function CompetitionListItem({ competition, inComp }) {
               </button>
             )}
           </h3>
-        </li>
-      </ul>
+        
+      
     </div>
   );
 }

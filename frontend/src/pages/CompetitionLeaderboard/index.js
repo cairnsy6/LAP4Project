@@ -240,8 +240,8 @@ function CompetitionLeaderboard() {
             <p>Something went wrong! Please check your url</p>
           ) : (
             <>
-              <h2>{leaderboard.name}</h2>
-              <p>{leaderboard.description}</p>
+              <h2 id="leaderboardnameh2">{leaderboard.name}</h2>
+              <p id="leaderboardnameh2">{leaderboard.description}</p>
 
               {isUserInCompetition ? (
                 <>
