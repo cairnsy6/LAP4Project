@@ -1,3 +1,6 @@
+
+@media only screen and (max-width: 425px) and (min-width:0px) {
+}
 .competition-table {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
@@ -5,45 +8,54 @@
   justify-content: space-evenly;
   align-items: center;
   font-size: 150%;
-  padding-bottom: 15%;
+  padding-bottom: 4%;
+
 }
 
 .profile-page {
-  background-image: url("https://static01.nyt.com/images/2020/02/12/opinion/12Ellis/12Ellis-superJumbo.jpg");
-  background-size: cover;
-  background-position: center fixed;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow:1px 1px 1px  black;
+
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: bisque;
+  color: white;
   text-align: center;
   height: 100vh;
   width: 100%;
 }
 
 #nameTitle {
-  margin-left: 30%;
+  margin-left: 5%;
   display: inline-block;
-  margin-right: 25%;
+  margin-right: 5%;
   padding-bottom: 2%;
+  font-size:5rem;
+  margin-top:10%;
 }
 
 #currentCompsTag {
   font-size: 150%;
+  padding-bottom:5%;
   text-decoration: underline;
 }
 
 #editProfileButton {
+
   display: inline-block;
+  margin-bottom:5%; 
+}
+#competitionInfo{
+  background: rgba(17, 124, 58, 0.3);
+
+
 }
 
 #create {
-  width: 80%;
-  border-radius: 10px;
+  width: 65%;
+  border-radius: 1rem;
+  margin-bottom: 5%;
+  margin-top: 5%;
   height: 10%;
-  background-color: #737c47;
-  border-color: #171e14;
   cursor: pointer;
   text-align: center;
 }

@@ -1,7 +1,7 @@
 #competitionLeaderboardDiv {
-  background-image: url("https://static01.nyt.com/images/2020/02/12/opinion/12Ellis/12Ellis-superJumbo.jpg");
+  /* background-image: url("https://static01.nyt.com/images/2020/02/12/opinion/12Ellis/12Ellis-superJumbo.jpg");
   /* background-image: url("https://www.iucn.org/sites/dev/files/content/images/2020/shutterstock_1458128810.jpg"); */
-  background-size: cover;
+  /* background-size: cover;
   background-position: center fixed;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   -webkit-box-align: center;
@@ -9,6 +9,6 @@
   align-items: center;
   color: bisque;
   text-align: center;
-  height: 100vh;
-  width: 100%;
+  height: 100vh; */
+ 
 }

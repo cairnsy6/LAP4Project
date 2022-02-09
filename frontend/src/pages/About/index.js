@@ -8,7 +8,7 @@ function About() {
       <NavBar />
       <div id="innerDiv">
         <h2 id="aboutTitle" aria-label="About">
-          About Us
+          Our Mission
         </h2>
         <p>
           Hellooooo, welcome to the Planet Pals. Tired of causing death and

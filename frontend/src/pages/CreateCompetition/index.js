@@ -49,30 +49,26 @@ function CreateCompetition() {
       <NavBar />
       <h1>Create Competition </h1>
       <form onSubmit={handleFormSubmit}>
-        <label htmlFor="name">Competition Name</label>
-        <input type="text" name="name" id="name" required />
-        <label htmlFor="description">Description</label>
-        <input type="textarea" name="description" id="description" required />
-        <label htmlFor="end-date">End Date</label>
-        <input type="date" name="end_date" id="end-date" required />
-        <label htmlFor="units">
-          What is your competition goal measured in?
-        </label>
+        <input type="text" name="name" id="name" placeholder="Name" required />
+        <input type="textarea" name="description" id="description" placeholder="Description" required />
+        <input type="date" name="end_date" id="end-date" placeholder="End Date" required />
         <p onClick={openUnitsHelp}>Help</p>
-        <input type="text" name="units" id="units" required />
+        <input type="text" name="units" id="units" placeholder="Unit of Measurement" required />
 
         <p>How would you like competitors to track their progress?</p>
         <p onClick={openFrequencyHelp}>Help</p>
+        
+        <input className="form-check-input" type="radio" name="frequency" id="daily" value="1" required />
         <label htmlFor="daily">Daily</label>
-        <input type="radio" name="frequency" id="daily" value="1" required />
-        <label htmlFor="rolling-total">Rolling total</label>
-        <input
+        <input 
+        className="form-check-input"
           type="radio"
           name="frequency"
           id="rolling-total"
           value="2"
           required
         />
+        <label htmlFor="rolling-total">Rolling total</label>
 
         <input type="submit" value="Create" />
       </form>

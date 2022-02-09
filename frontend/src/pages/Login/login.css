@@ -1,17 +1,20 @@
+@media only screen and (max-width: 425px) and (min-width:0px) {
+}
+
+@media only screen and (min-width: 426px) {}
+
+
 .loginmain {
-  background-image: url("https://static01.nyt.com/images/2020/02/12/opinion/12Ellis/12Ellis-superJumbo.jpg");
-  background-size: cover;
-  background-position: center fixed;
   height: 100vh;
   width: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .loginbody {
-  display: flex;
+  
+  background-position: right;
+  display: block;
   flex-direction: column;
   align-items: center;
-  background-color: #a1aea7;
   padding: 80px 50px;
   margin: 10px;
   border-radius: 10px;
@@ -20,25 +23,43 @@
   /* padding: 50px; */
 }
 
-.loginForm {
-  color: blue;
-  display: flex;
-  align-items: center;
+.loginbody input {
+  margin-bottom:2rem;
 }
 
-.loginInputLabel {
+.loginForm {
+  width: 100%;
+  padding:5px; 
+  margin-bottom: 7%;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 3rem;
+  display: flex;
+  
 }
+
+
+/* .loginbody input {
+    width: 160%;
+    padding:5px; 
+    margin-bottom: 7%;
+    box-shadow: 3px 3px 3px black;
+    border-radius: 3rem;
+} */
 
 #submit-btn {
-  color: red;
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 6px;
-  background-color: rgb(198, 182, 182);
+  font-size:25px;
+  text-shadow: 2px 2px 2px black;
+  width: 80%;
+  margin-bottom:2%;
+  border-radius: 3rem;
+  height:50px ;
 }
 #loginTitle {
   text-align: center;
   font-size: 80px;
   margin-top: -40px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+  color:white;
+  text-shadow:4px 4px 4px  black;
+
 }

@@ -4,36 +4,49 @@
   #registerTitle {
     font-family: 'Poppins', sans-serif;
     font-size: 4rem;
-    margin-top: 50px;
+    font-display: center;
+    margin-top: 25px;
     margin-left: 15%;
     margin-right: 15%;
     text-shadow: 2px 2px 2px black;
   }
+  #registerDiv input.placeholder{
+    text-align: center;
+}
   #slogan{
     font-size:1.25rem;
+    margin-bottom: 50px;
   }
   #regbutton{
-    
+  font-size:25px;
+  text-shadow: 2px 2px 2px black;
   width: 50%;
   margin-left:13%;
-  margin-bottom:5%
+  margin-bottom:1%
 
   }
-
+  .registerDiv{ 
+    background-position: right;
+    text-shadow: 2px 2px 2px black;
+  }
   .registerDiv form {
     padding-left: 10%;
     padding-right: 10%;
     width: 100%;
   }
   .registerDiv input {
-    width: 100%; 
-    margin-top: 5%;
+    width: 100%;
+    padding:5px; 
+    margin-bottom: 4%;
     margin-right: 10%;
     box-shadow: 3px 3px 3px black;
     border-radius: 3rem;
   }
 
-
+  #confirmPasswordLabel{
+    width: 120%;
+    padding-right: 40%;
+  }
   .registerDiv label{
     font-size:20px;
     width: 100%;
@@ -41,60 +54,58 @@
     margin-right: 10%;
     
   }
-
+  .registerDiv p{
+    margin-top:2%;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 2px black;
+  }
   #slogan{
     font-style: italic;
     margin-bottom:1rem;
   }
+  #loginButton{
+    width: 40%;
+    margin-left:3%; 
+    margin-bottom: 5%;
+    font-size: 25px;
+    box-shadow: 3px 3px 3px black;
+    border-radius: 3rem;
+    
+  text-shadow: 2px 2px 2px black;
+  }
 
 }
 
-#slogan{
-font-family: 'Poppins', sans-serif;
-font-style: italic;
-margin-bottom:1rem;
-}
+
 .registerDiv {
-  background-image: url("https://static01.nyt.com/images/2020/02/12/opinion/12Ellis/12Ellis-superJumbo.jpg");
-  background-size: cover;
-  background-position: center fixed;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  color: bisque;
+  color: white;
   text-align: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
-.registerDiv label {
-  width: 26%;
-  margin-bottom: 2%;
-  margin-left: 10%;
-}
 
-#register-btn {
-  background-color: #A1AEA7;
-  border-color: #A1AEA7;
-  color: bisque;
-  padding: 20px 20%;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+
+
 @media only screen and (min-width: 426px) {
   #registerTitle {
     font-family: 'Poppins', sans-serif;
     font-size: 8rem;
-    margin-top: 50px;
+    margin-top: 35px;
     margin-left: 15%;
     margin-right: 15%;
     text-shadow: 2px 2px 2px black;
   }
+  #slogan{
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    margin-bottom:2.3rem;
+    }
   .registerDiv input {
-    width: 34%;
+    width: 70%;
+    margin-left: 26%;
     margin-bottom: 2%;
     box-shadow: 3px 3px 3px black;
     border-radius: 3rem;
@@ -105,8 +116,17 @@ margin-bottom:1rem;
 }
 
 #regbutton {
-  margin-left: 30%;
-  margin-left: 30%;
+  margin-left: 25%;
   width: 25%;
+  text-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 3px black;
+}
+#loginButton{
+  width: 20%;
+
+  margin-bottom: 5%;
+  text-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 3rem;
 }
 }

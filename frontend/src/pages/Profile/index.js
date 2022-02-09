@@ -32,18 +32,39 @@ function Profile() {
         {userDetails.username}
       </h1>
       <Link to="/editprofile">
-        <button id="editProfileButton">Edit Profile?</button>
+        <button className = "btn btn-lg btn-warning"id="editProfileButton">Edit Profile</button>
       </Link>
-
-      <h2 id="currentCompsTag" className="profile-name">
-        Current Competitions {compDetails}
-      </h2>
-      <div className="competition-table">
-        <h3> Competition name</h3>
-        <h3> Score</h3>
+      <div id="competitionInfo">
+        <h2 id="currentCompsTag" className="profile-name">
+          Competitions {compDetails}
+        </h2>
+        <div className="competition-table">
+          <h3> Futureproof</h3>
+          <h3> 10</h3>
+        </div>
+        <div className="competition-table">
+          <h3> Futureproof</h3>
+          <h3> 10</h3>
+        </div>
+        <div className="competition-table">
+          <h3> Futureproof</h3>
+          <h3> 10</h3>
+        </div>
+        <div className="competition-table">
+          <h3> Futureproof</h3>
+          <h3> 10</h3>
+        </div>
+        <div className="competition-table">
+          <h3> Futureproof</h3>
+          <h3> 10</h3>
+        </div>
+              <div className="competition-table">
+          <h3> Futureproof</h3>
+          <h3> 10</h3>
+        </div>
       </div>
       <Link to="/create-competition">
-        <button id="create">
+        <button id="create" className = "btn btn-lg btn-success">
           <span>Create a competition!</span>
         </button>
       </Link>
