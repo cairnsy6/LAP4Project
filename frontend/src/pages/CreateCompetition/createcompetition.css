@@ -23,7 +23,7 @@ border-color:black
 
 button{
     font-size:25px;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px white;
     margin-top:10%;
 
     margin-bottom:2%;
@@ -34,4 +34,31 @@ h1{
     margin-top:10%;
     margin-bottom:10%;
     
+}
+#units{
+  width:75%;
+  color: white;
+  margin-right: 2% ;
+  margin-left: 5% ;
+}
+p{color:white}
+label{
+  margin-top:5px;
+  margin-left: 3px;
+  margin-right: 3px;
+  color:white;
+  font-size:20px
+}
+svg{color:white}
+
+p{
+  background: rgba(253, 67, 20,1);
+
+}
+#helpP{
+  background:none
+}
+
+.createbutton{
+  width:50%;
 }
