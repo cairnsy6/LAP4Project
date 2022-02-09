@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { NavBar } from "../../components";
-import "./style.css";
+import "./about.css";
 function About() {
   return (
     <div id="aboutDiv">

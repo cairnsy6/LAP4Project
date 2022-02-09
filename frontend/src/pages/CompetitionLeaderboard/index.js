@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import moment from "moment";
 import { useModal } from "react-hooks-use-modal";
 
-import "./style.css";
+import "./competitionleaderboard.css";
 import { NavBar, LeaderboardItem } from "../../components";
 import { URL } from "../../serverUrl";
 

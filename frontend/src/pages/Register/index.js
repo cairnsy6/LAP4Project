@@ -5,7 +5,7 @@ import { requestLogin, logout, login } from "../../redux/actions/action";
 
 import { NavBar } from "../../components";
 import { URL } from "../../serverUrl";
-import "./style.css";
+import "./register.css";
 
 function Register() {
   const [error, setError] = useState("");

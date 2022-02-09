@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 
 import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
-import "./style.css";
+import "./profile.css";
 
 function Profile() {
   const userDetails = useSelector((state) => state.currentUser);
