@@ -39,66 +39,42 @@ function Profile() {
     console.log(compDetails);
   }, []);
 
-  const competitionsScores = compDetails ? (
+  const competitionScores = compDetails ? (
     compDetails.map((c) => {
       return (
-        <div key={c.id}>
-          <p onClick={() => navigate(`/competition/${c.id}`)}>{c.name}</p>
-          <p>{c.score.score}</p>
+        <div key={c.id} className="competition-table">
+          <h3 onClick={() => navigate(`/competition/${c.id}`)}>{c.name}</h3>
+          <h3>{c.score.score}</h3>
         </div>
       );
     })
   ) : (
     <></>
   );
+
   return (
-    <main>
-      <div className="profile-page" aria-label="Profile">
-        <NavBar />
-        <h1 id="nameTitle" className="profile-name">
-          Name: {userDetails.username}
-        </h1>
-        <Link to="/editprofile">
-          <button className="btn btn-lg btn-warning" id="editProfileButton">
-            Edit Profile
-          </button>
-        </Link>
-      </div>
+    <div className="profile-page" aria-label="Profile">
+      <NavBar />
+      <h1 id="nameTitle" className="profile-name">
+        Name: {userDetails.username}
+      </h1>
+      <Link to="/editprofile">
+        <button className="btn btn-lg btn-warning" id="editProfileButton">
+          Edit Profile
+        </button>
+      </Link>
       <div id="competitionInfo">
         <h2 id="currentCompsTag" className="profile-name">
-          Competitions {compDetails}
+          Competitions
         </h2>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
+        {competitionScores}
       </div>
       <Link to="/create-competition">
         <button id="create" className="btn btn-lg btn-success">
           <span>Create a competition!</span>
         </button>
       </Link>
-    </main>
+    </div>
   );
 }
 

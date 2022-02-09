@@ -96,7 +96,6 @@ function Login() {
             type="submit"
             value="Submit"
           >
-            {" "}
             Login
           </button>
         </form>
