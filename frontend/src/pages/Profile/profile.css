@@ -26,7 +26,7 @@
 
 #nameTitle {
   margin-left: 5%;
-  display: inline-block;
+  display: block;
   margin-right: 5%;
   padding-bottom: 2%;
   font-size:5rem;
@@ -40,9 +40,10 @@
 }
 
 #editProfileButton {
-
-  display: inline-block;
+  margin-top: -5%;
+  diplay: inline-block;
   margin-bottom:5%; 
+  color: white;
 }
 #competitionInfo{
   background: rgba(17, 124, 58, 0.3);
