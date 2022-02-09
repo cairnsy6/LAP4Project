@@ -74,7 +74,7 @@ function Login() {
     <main className="loginmain" aria-label="loginmain">
       <NavBar />
       <div className="loginbody">
-        <form onSubmit={handleFormSubmit}>
+        <form role="login-form" onSubmit={handleFormSubmit}>
           <h2 id="loginTitle">Login</h2>
 
           <input

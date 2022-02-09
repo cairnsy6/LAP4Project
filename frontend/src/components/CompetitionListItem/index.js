@@ -42,7 +42,7 @@ function CompetitionListItem({ competition }) {
   };
 
   return (
-    <div>
+    <div role="CompetitionListItem">
       <ul>
         <li>
           <h3>
@@ -53,7 +53,7 @@ function CompetitionListItem({ competition }) {
             <span id="competitionName">{competition.name}</span>
             <span id="competitionDate">{dateReformatted}</span>
             {isLoggedIn && (
-              <button id="competitionButton" onClick={handleJoinClick}>
+              <button aria-label="competitionButton" id="competitionButton" onClick={handleJoinClick}>
                 Join
               </button>
             )}
