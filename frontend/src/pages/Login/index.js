@@ -76,13 +76,6 @@ function Login() {
       <div className="loginbody">
         <form onSubmit={handleFormSubmit}>
           <h2 id="loginTitle">Login</h2>
-<<<<<<< HEAD
-          
-          <input className="loginForm" type="text" id="username" placeholder="Username"/>
-          
-          <input className="loginForm" type="text" id="password" placeholder="Password"/>
-          <button id="submit-btn" className="btn-btn-lg btn-success" type="submit" value="Submit"> Login</button>
-=======
           <label className="loginInputLabel" for="username">
             Username
           </label>
@@ -92,7 +85,6 @@ function Login() {
           </label>
           <input className="loginForm" type="password" id="password" />
           <input id="submit-btn" type="submit" value="Submit" />
->>>>>>> b31d542a44518cb18fec2431609e1d2016ca9df9
         </form>
         <p>
           Don't have an account?

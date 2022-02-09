@@ -62,11 +62,6 @@ function Register() {
       <NavBar />
       <h1 id="registerTitle">Planet Pals</h1>
       <h4 id="slogan">Saving The World, One Competition At A Time</h4>
-<<<<<<< HEAD
-
-=======
-      <h2>Register</h2>
->>>>>>> b31d542a44518cb18fec2431609e1d2016ca9df9
       <form onSubmit={handleFormSubmit} aria-label="register-form">
         {/* <label htmlFor="username">Name</label> */}
         <input type="username" name="username" id="username"placeholder="Username" />

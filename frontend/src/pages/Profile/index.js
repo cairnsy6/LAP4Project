@@ -55,41 +55,11 @@ function Profile() {
     <div className="profile-page" aria-label="Profile">
       <NavBar />
       <h1 id="nameTitle" className="profile-name">
-        Name: {userDetails.username}
+        {userDetails.username}
       </h1>
       <Link to="/editprofile">
         <button className = "btn btn-lg btn-warning"id="editProfileButton">Edit Profile</button>
       </Link>
-<<<<<<< HEAD
-      <div id="competitionInfo">
-        <h2 id="currentCompsTag" className="profile-name">
-          Competitions {compDetails}
-        </h2>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-        <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-              <div className="competition-table">
-          <h3> Futureproof</h3>
-          <h3> 10</h3>
-        </div>
-=======
 
       <h2 id="currentCompsTag" className="profile-name">
         Current Competitions
@@ -99,7 +69,6 @@ function Profile() {
         <h3> Competition name</h3>
         {competitionsScores}
         <h3> Score</h3>
->>>>>>> b31d542a44518cb18fec2431609e1d2016ca9df9
       </div>
       <Link to="/create-competition">
         <button id="create" className = "btn btn-lg btn-success">
