@@ -82,6 +82,7 @@ function Login() {
             type="text"
             id="username"
             placeholder="Username"
+            required
           />
 
           <input
@@ -89,6 +90,7 @@ function Login() {
             type="password"
             id="password"
             placeholder="Password"
+            required
           />
           <button
             id="submit-btn"
