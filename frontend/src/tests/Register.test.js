@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -19,6 +19,10 @@ import { Register } from "../pages";
 // }));
 
 describe("Register", () => {
+  global.fetch = jest.fn(() =>
+  Promise.resolve({
+  json: () => Promise.resolve([{user: {id: 1}, token: 'test token'}])
+  }))
   beforeEach(() => {
     render(
       <Provider store={store}>
@@ -31,7 +35,8 @@ describe("Register", () => {
 
   it("creates a form element", () => {
     const form = screen.getByLabelText("register-form");
-    expect(form).toBeTruthy();
+    fireEvent.submit(form, {preventDefault: jest.fn(), target: {username: "test", password: "1234", passwordconfirm: "1234"}})
+    expect(form).toBeInTheDocument()
   });
 
   it("has a submit button", () => {
