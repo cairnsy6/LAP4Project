@@ -47,10 +47,11 @@ function Register() {
           });
           console.log("there was an error");
         } else {
+          localStorage.setItem("token", data.token);
           dispatch(login(data.user));
         }
 
-        // navigate(`/profile`, { replace: true });
+        navigate(`/profile`, { replace: true });
       } catch (error) {
         console.warn(error);
       }

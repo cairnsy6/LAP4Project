@@ -60,10 +60,11 @@ function Login() {
           payload: "Login not authorised",
         });
       } else {
+        localStorage.setItem("token", data.token);
         dispatch(login(data.user));
       }
 
-      // navigate(`/profile`, { replace: true });
+      navigate(`/profile`, { replace: true });
     } catch (error) {
       console.warn(error);
     }
@@ -82,7 +83,7 @@ function Login() {
           <label className="loginInputLabel" for="password">
             Password
           </label>
-          <input className="loginForm" type="text" id="password" />
+          <input className="loginForm" type="password" id="password" />
           <input id="submit-btn" type="submit" value="Submit" />
         </form>
         <p>
