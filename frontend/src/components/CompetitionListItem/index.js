@@ -43,9 +43,8 @@ function CompetitionListItem({ competition }) {
 
   return (
     <div role="CompetitionListItem">
-      <ul>
-        <li>
-          <h3>
+        
+          <h3 id="h3item">
             <span
               id="competitionTitle"
               onClick={() => navigate(`/competition/${competition.id}`)}
@@ -53,13 +52,13 @@ function CompetitionListItem({ competition }) {
             <span id="competitionName">{competition.name}</span>
             <span id="competitionDate">{dateReformatted}</span>
             {isLoggedIn && (
-              <button aria-label="competitionButton" id="competitionButton" onClick={handleJoinClick}>
+              <button className= "listbutton btn btn-lg btn-success " aria-label="competitionButton" id="competitionButton" onClick={handleJoinClick}>
                 Join
               </button>
             )}
           </h3>
-        </li>
-      </ul>
+        
+      
     </div>
   );
 }

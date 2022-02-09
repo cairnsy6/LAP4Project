@@ -58,7 +58,7 @@ function CompetitionList() {
       <NavBar />
       <h1 id="competitionListTitle">Competitions</h1>
       <button id="createCompButton" className= "btn btn-lg btn-success" onClick={handleCreate}>
-        <span>Create a competition</span>
+        <span id= "createacompSpan">Create a competition</span>
       </button>
 
       <ModalNotLoggedIn>
