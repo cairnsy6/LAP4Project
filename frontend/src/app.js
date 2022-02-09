@@ -11,12 +11,11 @@ import {
   EditProfile,
   CreateCompetition,
 } from "./pages";
-import "./style.css"
-
+import "./style.css";
 
 function App() {
   return (
-    <div id = "rootDiv">
+    <div id="rootDiv">
       <Routes>
         <Route exact path="/" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
