@@ -5,7 +5,7 @@ function LeaderboardItem({ score }) {
   const userDetails = useSelector((state) => state.currentUser);
 
   return (
-    <li className={userDetails.id === score.user.id ? "current" : "other"}>
+    <li role="LeaderboardItem" className={userDetails.id === score.user.id ? "current" : "other"}>
       <p>{score.user.username}</p>
       <p>{score.score}</p>
     </li>

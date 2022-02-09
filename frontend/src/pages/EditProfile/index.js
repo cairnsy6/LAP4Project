@@ -41,8 +41,8 @@ function EditProfile() {
   return (
     <div>
       <NavBar />
-      <h1>Update your profile {userDetails.username}</h1>
-      <form onSubmit={handleFormSubmit}>
+      <h1 aria-label="EditProfile">Update your profile {userDetails.username}</h1>
+      <form aria-label="update-profile" onSubmit={handleFormSubmit}>
         <label htmlFor="username">Name</label>
         <input type="text" name="username" id="username" />
         <label htmlFor="password">Password</label>
