@@ -11,13 +11,15 @@
 }
 
 #competitionListTitle {
-  padding-bottom: 1.25%;
+  margin-bottom: -1%;
+  color:white;
+  font-size: 40px;
 }
 #createCompButton {
-  width: 80%;
+  width: 75%;
   border-radius: 10px;
-  height: 10%;
-  background-color: #737c47;
+
+  padding-bottom:10%;
   border-color: #171e14;
   cursor: pointer;
   text-align: center;

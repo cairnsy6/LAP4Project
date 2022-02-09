@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 
 import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
-import "./style.css";
+import "./profile.css";
 
 function Profile() {
   const userDetails = useSelector((state) => state.currentUser);
@@ -55,18 +55,18 @@ function Profile() {
     <div className="profile-page" aria-label="Profile">
       <NavBar />
       <h1 id="nameTitle" className="profile-name">
-        {userDetails.username}
+        Rhys
       </h1>
       <Link to="/editprofile">
         <button className = "btn btn-lg btn-warning"id="editProfileButton">Edit Profile</button>
       </Link>
 
       <h2 id="currentCompsTag" className="profile-name">
-        Current Competitions
+        Competitions
       </h2>
 
       <div className="competition-table">
-        <h3> Competition name</h3>
+        <h3> Name</h3>
         {competitionsScores}
         <h3> Score</h3>
       </div>

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import { URL } from "../../serverUrl";
 import { CompetitionListItem, NavBar } from "../../components";
-import "./style.css";
+import "./competitionlist.css";
 
 function CompetitionList() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
@@ -57,7 +57,7 @@ function CompetitionList() {
     <div id="competitionDiv">
       <NavBar />
       <h1 id="competitionListTitle">Competitions</h1>
-      <button id="createCompButton" onClick={handleCreate}>
+      <button id="createCompButton" className= "btn btn-lg btn-success" onClick={handleCreate}>
         <span>Create a competition</span>
       </button>
 
