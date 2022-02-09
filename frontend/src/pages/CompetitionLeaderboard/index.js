@@ -20,6 +20,7 @@ function CompetitionLeaderboard() {
   const [totalInput, setTotalInput] = useState("");
   const [showManage, setShowManage] = useState(false);
   const [userToDeleteDetails, setUserToDeleteDetails] = useState();
+  const [isUserHost, setIsUserHost] = useState(false);
 
   const [
     LeaveCompetitionWarning,
@@ -34,6 +35,14 @@ function CompetitionLeaderboard() {
       preventScroll: true,
       closeOnOverlayClick: true,
     });
+  const [
+    DeleteCompetitionWarning,
+    openDeleteCompetitionWarning,
+    closeDeleteCompetitionWarning,
+  ] = useModal("root", {
+    preventScroll: true,
+    closeOnOverlayClick: true,
+  });
 
   const navigate = useNavigate();
 
@@ -57,11 +66,14 @@ function CompetitionLeaderboard() {
         `${URL}/competitions/${ID}/get_leaderboard`,
         options
       );
+
       if (!response.ok) {
         setCompError(true);
         return;
       } else {
         const data = await response.json();
+
+        userDetails.id === data.host_id && setIsUserHost(true);
         return data;
       }
     } catch (error) {
@@ -172,6 +184,8 @@ function CompetitionLeaderboard() {
       };
       const response = await fetch(`${URL}/scores/`, options);
       const data = await response.json();
+      setIsUserInCompetition(true);
+      setUserScoreObject(data);
       console.log(data);
     } catch (error) {
       console.warn(error);
@@ -197,6 +211,25 @@ function CompetitionLeaderboard() {
   ) : (
     <></>
   );
+
+  const handleDeleteCompetition = async () => {
+    try {
+      const options = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+      };
+      const res = await fetch(`${URL}/competitions/${ID}`, options);
+      console.log(res);
+      // const dta = await res.json();
+      // console.log(dta);
+      navigate(`/profile`);
+    } catch (error) {
+      console.warn(error);
+    }
+  };
 
   return (
     <div id="competitionLeaderboardDiv" aria-label="leaderboard">
@@ -271,21 +304,43 @@ function CompetitionLeaderboard() {
           )}
         </>
       )}
-      <button
-        onClick={() => {
-          setShowManage(!showManage);
-        }}
-      >
-        Manage participants
-      </button>
-      <div>{showManage && manage}</div>
+      {isUserHost && (
+        <div>
+          <button
+            onClick={() => {
+              setShowManage(!showManage);
+            }}
+          >
+            Manage participants
+          </button>
+          <div>{showManage && manage}</div>
+          <button onClick={() => openDeleteCompetitionWarning()}>
+            Delete Competition
+          </button>
+        </div>
+      )}
+      <DeleteCompetitionWarning>
+        <p>Are you sure you want to delete this competition?</p>
+        <button onClick={closeDeleteCompetitionWarning}>Cancel</button>
+        <button
+          onClick={() => {
+            closeDeleteCompetitionWarning();
+            handleDeleteCompetition();
+          }}
+        >
+          Delete
+        </button>
+      </DeleteCompetitionWarning>
+
+      {/* Bethan */}
+
       <LeaveCompetitionWarning>
         <p>Are you sure you want to leave the competition?</p>
         <button onClick={closeLeaveCompetitionWarning}>Cancel</button>
         <button
           onClick={() => {
-            handleUserLeavingComp(userScoreObject);
             closeLeaveCompetitionWarning();
+            handleUserLeavingComp(userScoreObject);
           }}
         >
           Leave
