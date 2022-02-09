@@ -24,7 +24,7 @@ function NavBar() {
   //add ternary
   return (
     <div>
-      <nav id="navBar">
+      <nav aria-label="NavBar" id="navBar">
         <Link to="/">
           <svg
             id="homeIcon"

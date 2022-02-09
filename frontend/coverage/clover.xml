@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1644338783583" clover="3.2.0">
-  <project timestamp="1644338783583" name="All files">
-    <metrics statements="238" coveredstatements="19" conditionals="57" coveredconditionals="5" methods="57" coveredmethods="5" elements="352" coveredelements="29" complexity="0" loc="238" ncloc="238" packages="18" files="18" classes="18"/>
+<coverage generated="1644343144970" clover="3.2.0">
+  <project timestamp="1644343144970" name="All files">
+    <metrics statements="229" coveredstatements="67" conditionals="57" coveredconditionals="9" methods="55" coveredmethods="17" elements="341" coveredelements="93" complexity="0" loc="229" ncloc="229" packages="18" files="18" classes="18"/>
     <package name="src">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="serverUrl.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/serverUrl.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="8" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
@@ -46,13 +46,13 @@
       </file>
     </package>
     <package name="src.components.NavBar">
-      <metrics statements="6" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+      <metrics statements="6" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
       <file name="index.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/components/NavBar/index.js">
-        <metrics statements="6" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
-        <line num="20" count="5" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
+        <metrics statements="6" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="20" count="11" type="stmt"/>
+        <line num="21" count="11" type="stmt"/>
+        <line num="22" count="11" type="stmt"/>
+        <line num="25" count="11" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
       </file>
@@ -67,26 +67,26 @@
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/pages/About/index.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.CompetitionLeaderboard">
-      <metrics statements="74" coveredstatements="0" conditionals="28" coveredconditionals="0" methods="14" coveredmethods="0"/>
+      <metrics statements="74" coveredstatements="31" conditionals="28" coveredconditionals="5" methods="14" coveredmethods="6"/>
       <file name="index.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/pages/CompetitionLeaderboard/index.js">
-        <metrics statements="74" coveredstatements="0" conditionals="28" coveredconditionals="0" methods="14" coveredmethods="0"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
+        <metrics statements="74" coveredstatements="31" conditionals="28" coveredconditionals="5" methods="14" coveredmethods="6"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -96,37 +96,37 @@
         <line num="38" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
         <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="71" count="3" type="stmt"/>
         <line num="72" count="0" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
         <line num="78" count="0" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
         <line num="81" count="0" type="stmt"/>
-        <line num="84" count="0" type="stmt"/>
+        <line num="84" count="3" type="stmt"/>
         <line num="85" count="0" type="stmt"/>
         <line num="86" count="0" type="stmt"/>
-        <line num="89" count="0" type="stmt"/>
+        <line num="89" count="3" type="stmt"/>
         <line num="90" count="0" type="stmt"/>
         <line num="91" count="0" type="stmt"/>
         <line num="92" count="0" type="stmt"/>
-        <line num="95" count="0" type="stmt"/>
-        <line num="97" count="0" type="stmt"/>
-        <line num="99" count="0" type="stmt"/>
-        <line num="102" count="0" type="stmt"/>
-        <line num="103" count="0" type="stmt"/>
-        <line num="104" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="95" count="3" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="102" count="3" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="105" count="0" type="stmt"/>
         <line num="106" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="107" count="0" type="stmt"/>
@@ -135,9 +135,9 @@
         <line num="112" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="113" count="0" type="stmt"/>
         <line num="114" count="0" type="stmt"/>
-        <line num="119" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="119" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="121" count="0" type="stmt"/>
-        <line num="127" count="0" type="stmt"/>
+        <line num="127" count="3" type="stmt"/>
         <line num="128" count="0" type="stmt"/>
         <line num="129" count="0" type="stmt"/>
         <line num="130" count="0" type="stmt"/>
@@ -146,7 +146,7 @@
         <line num="144" count="0" type="stmt"/>
         <line num="145" count="0" type="stmt"/>
         <line num="147" count="0" type="stmt"/>
-        <line num="150" count="0" type="stmt"/>
+        <line num="150" count="3" type="stmt"/>
         <line num="216" count="0" type="stmt"/>
       </file>
     </package>
@@ -178,14 +178,14 @@
       </file>
     </package>
     <package name="src.pages.CreateCompetition">
-      <metrics statements="18" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="18" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
       <file name="index.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/pages/CreateCompetition/index.js">
-        <metrics statements="18" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
+        <metrics statements="18" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
@@ -198,7 +198,7 @@
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.EditProfile">
@@ -222,24 +222,24 @@
       </file>
     </package>
     <package name="src.pages.Home">
-      <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
       <file name="index.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/pages/Home/index.js">
-        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.Login">
-      <metrics statements="19" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="19" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
       <file name="index.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/pages/Login/index.js">
-        <metrics statements="19" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
+        <metrics statements="19" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
@@ -247,36 +247,29 @@
         <line num="48" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
-        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="89" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.Profile">
-      <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="index.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/pages/Profile/index.js">
-        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.Register">
       <metrics statements="20" coveredstatements="5" conditionals="6" coveredconditionals="1" methods="3" coveredmethods="1"/>
       <file name="index.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/pages/Register/index.js">
         <metrics statements="20" coveredstatements="5" conditionals="6" coveredconditionals="1" methods="3" coveredmethods="1"/>
-        <line num="11" count="3" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
@@ -285,67 +278,65 @@
         <line num="20" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.redux.actions">
+      <metrics statements="20" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="action.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/redux/actions/action.js">
+        <metrics statements="20" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="26" count="8" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="43" count="0" type="stmt"/>
+        <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="57" count="2" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.redux.actions">
-      <metrics statements="22" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
-      <file name="action.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/redux/actions/action.js">
-        <metrics statements="22" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="56" count="3" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="57" count="8" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.redux.reducers">
       <metrics statements="9" coveredstatements="4" conditionals="5" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="loggingReducer.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/redux/reducers/loggingReducer.js">
         <metrics statements="9" coveredstatements="4" conditionals="5" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="7" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="3" type="cond" truecount="1" falsecount="3"/>
+        <line num="1" count="8" type="stmt"/>
+        <line num="7" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="8" type="cond" truecount="1" falsecount="3"/>
         <line num="10" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
       </file>
     </package>
     <package name="src.redux.store">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="store.js" path="/Users/bethanvaughan/Desktop/LAP4_PROJECT/LAP4Project/frontend/src/redux/store/store.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
       </file>
     </package>
   </project>

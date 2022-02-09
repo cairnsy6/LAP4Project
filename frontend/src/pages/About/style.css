@@ -21,3 +21,16 @@
 #aboutTitle {
   font-size: 500%;
 }
+
+@media only screen and (max-width: 425px) and (min-width:0px) {
+  #aboutTitle {
+
+  }
+  #innerDiv{
+    margin-top: 15%;
+    width:80%;
+    margin-left: 10%;
+    border-style: none;
+    font-size: 1.5rem;
+  }
+}

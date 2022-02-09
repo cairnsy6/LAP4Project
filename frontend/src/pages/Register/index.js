@@ -25,7 +25,7 @@ function Register() {
           password: e.target.password.value,
           email: e.target.email.value,
         };
-        console.log(user);
+        // console.log(user);
         const options = {
           method: "POST",
           headers: { "Content-type": "application/json" },
@@ -34,18 +34,21 @@ function Register() {
 
         const response = await fetch(`${URL}/register/`, options);
         const data = await response.json();
+        console.log("data from register", data);
 
         // if (data.err) {
         //   throw Error(data.err);
         // }
 
-        if (!data.success) {
+        if (!data.token) {
           dispatch({
             type: "ERROR",
             payload: "Login not authorised",
           });
+          console.log("there was an error");
         } else {
-          dispatch(login(data.token));
+          localStorage.setItem("token", data.token);
+          dispatch(login(data.user));
         }
 
         navigate(`/profile`, { replace: true });
@@ -58,9 +61,8 @@ function Register() {
     <div className="registerDiv">
       <NavBar />
       <h1 id="registerTitle">Planet Pals</h1>
-      <div>Slogan</div>
+      <h4 id="slogan">Saving The World, One Competition At A Time</h4>
       <h2>Register</h2>
-
       <form onSubmit={handleFormSubmit} aria-label="register-form">
         <label htmlFor="username">Name</label>
         <input type="username" name="username" id="username" />
@@ -73,7 +75,15 @@ function Register() {
 
         {error && <p>{error}</p>}
 
-        <input type="submit" value="Register" aria-label="register-button" />
+
+        <input
+          id="regbutton"
+          className="btn-success btn btn-lg"
+          type="submit"
+          value="Register"
+          aria-label="register-button"
+        />
+
       </form>
       <p onClick={() => navigate("/login")}>
         Already have an account? Click here to login

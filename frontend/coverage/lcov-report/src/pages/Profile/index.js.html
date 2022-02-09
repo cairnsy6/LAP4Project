@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -127,24 +127,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,29 +180,29 @@ import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
 import "./style.css";
 &nbsp;
-function <span class="fstat-no" title="function not covered" >Profile(</span>) {
-  const userDetails = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; <span class="cstat-no" title="statement not covered" >state.currentUser)</span>;</span>
-  const [compDetails, setCompDetails] = <span class="cstat-no" title="statement not covered" >useState();</span>
+function Profile() {
+  const userDetails = useSelector((state) =&gt; state.currentUser);
+  const [compDetails, setCompDetails] = useState();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-    const getCompetitionsAndScores = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
-      const response = <span class="cstat-no" title="statement not covered" >await fetch(`${URL}/competitions/user_comps/`);</span>
-      const data = <span class="cstat-no" title="statement not covered" >await response.json();</span>
-<span class="cstat-no" title="statement not covered" >      console.log(data);</span>
-<span class="cstat-no" title="statement not covered" >      setCompDetails(data);</span>
-    };
-<span class="cstat-no" title="statement not covered" >    getCompetitionsAndScores();</span>
-  }, []);
+  // useEffect(() =&gt; {
+  //   const getCompetitionsAndScores = async () =&gt; {
+  //     const response = await fetch(`${URL}/competitions/user_comps/`);
+  //     const data = await response.json();
+  //     console.log(data);
+  //     setCompDetails(data);
+  //   };
+  //   getCompetitionsAndScores();
+  // }, []);
 &nbsp;
   // do this when auth server is fixed:
   //   const comps = compdetails.map((c) =&gt; {
   // return &lt;p&gt;{c.name}&lt;/p&gt;
   //   })
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;div className="profile-page"&gt;
+  return (
+    &lt;div className="profile-page" aria-label="Profile"&gt;
       &lt;NavBar /&gt;
       &lt;h1 id="nameTitle" className="profile-name"&gt;
-        {userDetails.username}
+        Name:{userDetails.username}
       &lt;/h1&gt;
       &lt;Link to="/editprofile"&gt;
         &lt;button id="editProfileButton"&gt;Edit Profile?&lt;/button&gt;
@@ -232,7 +232,7 @@ export default Profile;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Feb 08 2022 16:46:23 GMT+0000 (Greenwich Mean Time)
+                at Tue Feb 08 2022 17:59:04 GMT+0000 (Greenwich Mean Time)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

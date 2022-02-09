@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { useModal } from "react-hooks-use-modal";
-
+import { useEffect } from "react";
 import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
 import "./style.css";
@@ -17,6 +17,7 @@ function CreateCompetition() {
     { preventScroll: true, closeOnOverlayClick: true }
   );
   const userDetails = useSelector((state) => state.currentUser);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
@@ -31,23 +32,49 @@ function CreateCompetition() {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json",
-          Authorization: "Authentication",
+          Authorization: `token ${localStorage.getItem("token")}`,
         }),
-        //need to add the token into the headers
         body: JSON.stringify(bodyObject),
       };
       const response = await fetch(`${URL}/competitions/`, options);
       const data = await response.json();
+      console.log(data);
+      // join
+
+      const competitionDetails = {
+        user_id: userDetails.id,
+        competition_id: data.id,
+        score: 0,
+        last_updated: "2000-01-01",
+      };
+      const option = {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(competitionDetails),
+      };
+      const res = await fetch(`${URL}/scores/`, option);
+      const dt = await res.json();
+      console.log(dt);
+
       navigate(`/competition/${data.id}`);
     } catch (error) {
       console.log(error);
     }
   };
 
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/competitions");
+    }
+  }, []);
+
   return (
     <div id="createCompDiv">
       <NavBar />
-      <h1>Create Competition </h1>
+      <h1 aria-label="CreateCompetition">Create Competition </h1>
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="name">Competition Name</label>
         <input type="text" name="name" id="name" required />

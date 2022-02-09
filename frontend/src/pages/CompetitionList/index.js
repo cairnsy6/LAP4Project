@@ -18,7 +18,12 @@ function CompetitionList() {
 
   const fetchCompetitions = async () => {
     try {
-      const response = await fetch(`${URL}/competitions/public`);
+      const options = {
+        headers: new Headers({
+          Authorization: `token ${localStorage.getItem("token")}`,
+        }),
+      };
+      const response = await fetch(`${URL}/competitions/public`, options);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -67,7 +72,9 @@ function CompetitionList() {
           </button>
         </div>
       </ModalNotLoggedIn>
-      <h2 id="publicComps">Public Competitions</h2>
+      <h2 id="publicComps" aria-label="competition-list">
+        Public Competitions
+      </h2>
       {competitions.length ? (
         compList
       ) : (

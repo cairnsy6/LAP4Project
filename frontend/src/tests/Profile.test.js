@@ -4,16 +4,18 @@
 
 import React from "react";
 import { screen, render } from "@testing-library/react";
-import Profile from "../pages/Profile/index";
+import { Profile } from "../pages";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import { store } from "../redux/store/store";
 
-describe("Register", () => {
+global.fetch = require("jest-fetch-mock");
+
+describe("Profile", () => {
   beforeAll(() => {
     render(
       <Provider store={store}>
-        <About />
+        <Profile />
       </Provider>,
       { wrapper: MemoryRouter }
     );

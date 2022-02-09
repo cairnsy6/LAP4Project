@@ -1,11 +1,12 @@
 import jwt_decode from "jwt-decode";
 import { URL } from "../../serverUrl";
 
-export const login = (token) => {
+export const login = (user) => {
   return async (dispatch) => {
     try {
-      const user = await jwt_decode(token);
-      localStorage.setItem("token", token);
+      // const user = await jwt_decode(token);
+      // console.log("USER", user);
+      // localStorage.setItem("token", token);
       dispatch({
         type: "LOG_IN",
         payload: user,
