@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
-
+import "./editprofile.css"
 import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
 
@@ -41,15 +41,12 @@ function EditProfile() {
   return (
     <div>
       <NavBar />
-      <h1 aria-label="EditProfile">Update your profile {userDetails.username}</h1>
-      <form aria-label="update-profile" onSubmit={handleFormSubmit}>
-        <label htmlFor="username">Name</label>
-        <input type="text" name="username" id="username" />
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" />
-        <label htmlFor="password-confirm">Confirm password</label>
-        <input type="password" name="passwordconfirm" id="passwordconfirm" />
-        <input type="submit" value="Submit" />
+      <h1>Update your profile </h1>
+      <form onSubmit={handleFormSubmit}>
+        <input type="text" name="username" id="username" placeholder="Username"/>
+        <input type="password" name="password" id="password" placeholder="Password"/>
+        <input type="password" name="passwordconfirm" id="passwordconfirm" placeholder ="Confirm Password" />
+        <button className="btn btn-lg btn-success" type="submit" value="Submit">Submit</button>
       </form>
     </div>
   );

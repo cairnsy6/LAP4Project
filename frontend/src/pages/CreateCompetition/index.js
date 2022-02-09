@@ -2,10 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { useModal } from "react-hooks-use-modal";
-
+import { useEffect } from "react";
 import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
-import "./style.css";
+import "./createcompetition.css";
 
 function CreateCompetition() {
   const [UnitsHelp, openUnitsHelp, closeUnitsHelp] = useModal("root", {
@@ -17,6 +17,7 @@ function CreateCompetition() {
     { preventScroll: true, closeOnOverlayClick: true }
   );
   const userDetails = useSelector((state) => state.currentUser);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
@@ -31,48 +32,72 @@ function CreateCompetition() {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json",
-          Authorization: "Authentication",
+          Authorization: `token ${localStorage.getItem("token")}`,
         }),
-        //need to add the token into the headers
         body: JSON.stringify(bodyObject),
       };
       const response = await fetch(`${URL}/competitions/`, options);
       const data = await response.json();
+      console.log(data);
+      // join
+
+      const competitionDetails = {
+        user_id: userDetails.id,
+        competition_id: data.id,
+        score: 0,
+        last_updated: "2000-01-01",
+      };
+      const option = {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(competitionDetails),
+      };
+      const res = await fetch(`${URL}/scores/`, option);
+      const dt = await res.json();
+      console.log(dt);
+
       navigate(`/competition/${data.id}`);
     } catch (error) {
       console.log(error);
     }
   };
 
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/competitions");
+    }
+  }, []);
+
   return (
     <div id="createCompDiv">
       <NavBar />
       <h1 aria-label="CreateCompetition">Create Competition </h1>
       <form onSubmit={handleFormSubmit}>
-        <label htmlFor="name">Competition Name</label>
-        <input type="text" name="name" id="name" required />
-        <label htmlFor="description">Description</label>
-        <input type="textarea" name="description" id="description" required />
-        <label htmlFor="end-date">End Date</label>
-        <input type="date" name="end_date" id="end-date" required />
-        <label htmlFor="units">
-          What is your competition goal measured in?
-        </label>
+        <input type="text" name="name" id="name" placeholder="Name" required />
+        <input type="textarea" name="description" id="description" placeholder="Description" required />
+        <input type="date" name="end_date" id="end-date" placeholder="End Date" required />
         <p onClick={openUnitsHelp}>Help</p>
-        <input type="text" name="units" id="units" required />
+        <input type="text" name="units" id="units" placeholder="Unit of Measurement" required />
 
         <p>How would you like competitors to track their progress?</p>
         <p onClick={openFrequencyHelp}>Help</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+</svg>
+        <input className="form-check-input" type="radio" name="frequency" id="daily" value="1" required />
         <label htmlFor="daily">Daily</label>
-        <input type="radio" name="frequency" id="daily" value="1" required />
-        <label htmlFor="rolling-total">Rolling total</label>
-        <input
+        <input 
+        className="form-check-input"
           type="radio"
           name="frequency"
           id="rolling-total"
           value="2"
           required
         />
+        <label htmlFor="rolling-total">Rolling total</label>
 
         <input type="submit" value="Create" />
       </form>

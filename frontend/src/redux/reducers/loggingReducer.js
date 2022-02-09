@@ -1,6 +1,6 @@
 const initState = {
   isLoggedIn: false,
-  currentUser: { username: "" },
+  currentUser: {},
   error: "",
 };
 

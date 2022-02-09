@@ -1,0 +1,35 @@
+
+#innerDiv {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 2%;
+}
+#aboutTitle {
+  font-size: 500%;
+  color:white;
+  text-shadow:1px 1px 1px  black;
+
+}
+#innerDiv p {
+  font-size:20px;
+  text-shadow:1px 1px 1px  black;
+  background: rgba(17, 124, 58, 0.2);
+  color:rgb(255, 255, 255)
+}
+
+@media only screen and (max-width: 425px) and (min-width:0px) {
+  #aboutTitle {
+    color:white;
+    text-shadow:1px 1px 1px  black;
+
+    font-size: 4.5rem;
+
+  }
+  #innerDiv{
+    margin-top: 12%;
+    width:80%;
+    margin-left: 10%;
+    border-style: none;
+    font-size: 1.5rem;
+  }
+}

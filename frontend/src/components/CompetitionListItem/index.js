@@ -20,15 +20,16 @@ function CompetitionListItem({ competition }) {
     e.preventDefault();
     try {
       const competitionDetails = {
-        userId: userDetails.id,
-        competitionId: competition.id,
+        user_id: userDetails.id,
+        competition_id: competition.id,
         score: 0,
+        last_updated: "0000-00-00",
       };
       const options = {
         method: "POST",
         headers: {
           "Content-type": "application/json",
-          Authorization: "Authentication",
+          Authorization: `token ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify(competitionDetails),
       };

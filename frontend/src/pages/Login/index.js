@@ -60,10 +60,11 @@ function Login() {
           payload: "Login not authorised",
         });
       } else {
+        localStorage.setItem("token", data.token);
         dispatch(login(data.user));
       }
 
-      // navigate(`/profile`, { replace: true });
+      navigate(`/profile`, { replace: true });
     } catch (error) {
       console.warn(error);
     }
@@ -75,15 +76,28 @@ function Login() {
       <div className="loginbody">
         <form role="login-form" onSubmit={handleFormSubmit}>
           <h2 id="loginTitle">Login</h2>
-          <label className="loginInputLabel" for="username">
-            Username
-          </label>
-          <input className="loginForm" type="text" id="username" />
-          <label className="loginInputLabel" for="password">
-            Password
-          </label>
-          <input className="loginForm" type="text" id="password" />
-          <input id="submit-btn" type="submit" value="Submit" />
+
+          <input
+            className="loginForm"
+            type="text"
+            id="username"
+            placeholder="Username"
+          />
+
+          <input
+            className="loginForm"
+            type="text"
+            id="password"
+            placeholder="Password"
+          />
+          <button
+            id="submit-btn"
+            className="btn-btn-lg btn-success"
+            type="submit"
+            value="Submit"
+          >
+            Login
+          </button>
         </form>
         <p>
           Don't have an account?
