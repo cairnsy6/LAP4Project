@@ -86,7 +86,7 @@ function Login() {
 
           <input
             className="loginForm"
-            type="text"
+            type="password"
             id="password"
             placeholder="Password"
           />
