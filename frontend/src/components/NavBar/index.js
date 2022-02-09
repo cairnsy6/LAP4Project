@@ -101,7 +101,7 @@ function NavBar() {
               viewBox="0 0 16 16"
               onClick={() => {
                 dispatch(logout());
-                navigate(`/`, { replace: true });
+                navigate(`/login`, { replace: true });
               }}
             >
               <path

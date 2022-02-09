@@ -64,16 +64,30 @@ function Register() {
       <h4 id="slogan">Saving The World, One Competition At A Time</h4>
       <form onSubmit={handleFormSubmit} aria-label="register-form">
         {/* <label htmlFor="username">Name</label> */}
-        <input type="username" name="username" id="username"placeholder="Username" />
+        <input
+          type="username"
+          name="username"
+          id="username"
+          placeholder="Username"
+        />
         {/* <label htmlFor="email">Email</label> */}
-        <input type="email" name="email" id="email"placeholder="Email" />
+        <input type="email" name="email" id="email" placeholder="Email" />
         {/* <label htmlFor="password">Password</label> */}
-        <input type="password" name="password" id="password" placeholder="Password" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+        />
         {/* <label htmlFor="passwordconfirm" id= "confirmPasswordLabel">Confirm Password</label> */}
-        <input type="password" name="passwordconfirm" id="passwordconfirm" placeholder="Confirm Password"/>
+        <input
+          type="password"
+          name="passwordconfirm"
+          id="passwordconfirm"
+          placeholder="Confirm Password"
+        />
 
         {error && <p>{error}</p>}
-
 
         <input
           id="regbutton"
@@ -82,11 +96,15 @@ function Register() {
           value="Register"
           aria-label="register-button"
         />
-
       </form>
       <p> OR</p>
-      <p id = "loginButton" className="btn btn-primary btn-lg" onClick={() => navigate("/login")}>Click to Login</p>
-      
+      <p
+        id="loginButton"
+        className="btn btn-primary btn-lg"
+        onClick={() => navigate("/login")}
+      >
+        Click to Login
+      </p>
     </div>
   );
 }

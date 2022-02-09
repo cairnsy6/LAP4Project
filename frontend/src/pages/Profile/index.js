@@ -39,39 +39,38 @@ function Profile() {
     console.log(compDetails);
   }, []);
 
-  const competitionsScores = compDetails ? (
+  const competitionScores = compDetails ? (
     compDetails.map((c) => {
       return (
-        <div key={c.id}>
-          <p onClick={() => navigate(`/competition/${c.id}`)}>{c.name}</p>
-          <p>{c.score.score}</p>
+        <div key={c.id} className="competition-table">
+          <h3 onClick={() => navigate(`/competition/${c.id}`)}>{c.name}</h3>
+          <h3>{c.score.score}</h3>
         </div>
       );
     })
   ) : (
     <></>
   );
+
   return (
     <div className="profile-page" aria-label="Profile">
       <NavBar />
       <h1 id="nameTitle" className="profile-name">
-        Rhys
+        Name: {userDetails.username}
       </h1>
       <Link to="/editprofile">
-        <button className = "btn btn-lg btn-warning"id="editProfileButton">Edit Profile</button>
+        <button className="btn btn-lg btn-warning" id="editProfileButton">
+          Edit Profile
+        </button>
       </Link>
-
-      <h2 id="currentCompsTag" className="profile-name">
-        Competitions
-      </h2>
-
-      <div className="competition-table">
-        <h3> Name</h3>
-        {competitionsScores}
-        <h3> Score</h3>
+      <div id="competitionInfo">
+        <h2 id="currentCompsTag" className="profile-name">
+          Competitions
+        </h2>
+        {competitionScores}
       </div>
       <Link to="/create-competition">
-        <button id="create" className = "btn btn-lg btn-success">
+        <button id="create" className="btn btn-lg btn-success">
           <span>Create a competition!</span>
         </button>
       </Link>

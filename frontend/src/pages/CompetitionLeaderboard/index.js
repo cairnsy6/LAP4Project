@@ -225,6 +225,7 @@ function CompetitionLeaderboard() {
                               today?
                             </label>
                             <input
+                              id="score-update"
                               type="checkbox"
                               name="score-update"
                               required

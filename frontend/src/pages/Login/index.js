@@ -76,15 +76,28 @@ function Login() {
       <div className="loginbody">
         <form onSubmit={handleFormSubmit}>
           <h2 id="loginTitle">Login</h2>
-          <label className="loginInputLabel" for="username">
-            Username
-          </label>
-          <input className="loginForm" type="text" id="username" />
-          <label className="loginInputLabel" for="password">
-            Password
-          </label>
-          <input className="loginForm" type="password" id="password" />
-          <input id="submit-btn" type="submit" value="Submit" />
+
+          <input
+            className="loginForm"
+            type="text"
+            id="username"
+            placeholder="Username"
+          />
+
+          <input
+            className="loginForm"
+            type="text"
+            id="password"
+            placeholder="Password"
+          />
+          <button
+            id="submit-btn"
+            className="btn-btn-lg btn-success"
+            type="submit"
+            value="Submit"
+          >
+            Login
+          </button>
         </form>
         <p>
           Don't have an account?
