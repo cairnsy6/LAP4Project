@@ -18,7 +18,12 @@ function CompetitionList() {
 
   const fetchCompetitions = async () => {
     try {
-      const response = await fetch(`${URL}/competitions/public`);
+      const options = {
+        headers: new Headers({
+          Authorization: `token ${localStorage.getItem("token")}`,
+        }),
+      };
+      const response = await fetch(`${URL}/competitions/public`, options);
       const data = await response.json();
       return data;
     } catch (error) {
