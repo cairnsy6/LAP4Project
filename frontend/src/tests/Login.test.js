@@ -3,25 +3,27 @@
  */
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { default as Login } from "../pages/Login/index";
+import { Login } from "../pages";
 import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../redux/store/store";
 
-// describe("Login", () => {
-//   let mockFunction;
-//   beforeEach(() => {
-//     mockFunction = jest.fn();
-//     render(
-//       <Provider store={store}>
-//         <Login />
-//       </Provider>,
-//       { wrapper: MemoryRouter }
-//     );
-//   });
+describe("Login", () => {
+  beforeEach(() => {
+    render(
+      <Provider store={store}>
+        <Login />
+      </Provider>,
+      { wrapper: MemoryRouter }
+    );
+  });
 
-//   test("Login", () => {
-//     let log = screen.getByRole("loginmain");
-//     expect(log).toBeInTheDocument();
-//   });
-// });
+  test("Login", () => {
+    let log = screen.getByLabelText("loginmain");
+    expect(log).toBeInTheDocument();
+  });
+  test("it renders the login page", () => {
+    const login = screen.getByLabelText("Login");
+    expect(login).toBeTruthy();
+  });
+});

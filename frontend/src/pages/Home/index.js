@@ -9,10 +9,8 @@ function Home() {
   return (
     <>
       <NavBar />
-      <div className="homeDiv">
-        <h1 id="homeTitle" aria-label="home-container">
-          Planet Pals
-        </h1>
+      <div className="homeDiv" aria-label="Home">
+        <h1 id="homeTitle">Planet Pals</h1>
         <div>Slogan</div>
 
         <button

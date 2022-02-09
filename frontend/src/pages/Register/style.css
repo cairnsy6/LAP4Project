@@ -87,8 +87,44 @@
   width: 100%;
 }
 
+<<<<<<< HEAD
 
 
+=======
+.registerDiv label {
+  width: 26%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+}
+.registerDiv input {
+  width: 34%;
+  margin-bottom: 2%;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 3rem;
+}
+.registerDiv form {
+  width: 80%;
+}
+
+#regbutton {
+  margin-left: 30%;
+  margin-left: 30%;
+  width: 25%;
+}
+
+#register-btn {
+  background-color: #A1AEA7;
+  border-color: #A1AEA7;
+  color: bisque;
+  padding: 20px 20%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+>>>>>>> b31d542a44518cb18fec2431609e1d2016ca9df9
 @media only screen and (min-width: 426px) {
   #registerTitle {
     font-family: 'Poppins', sans-serif;

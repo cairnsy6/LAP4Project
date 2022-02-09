@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
@@ -11,29 +12,55 @@ function Profile() {
   const userDetails = useSelector((state) => state.currentUser);
   const [compDetails, setCompDetails] = useState();
 
-  useEffect(() => {
-    const getCompetitionsAndScores = async () => {
-      const response = await fetch(`${URL}/competitions/user_comps/`);
+  const navigate = useNavigate();
+
+  const getCompetitionsAndScores = async () => {
+    try {
+      const options = {
+        method: "POST",
+        body: JSON.stringify({ user_id: userDetails.id }),
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+      };
+      // console.log(localStorage.getItem("token"));
+      const response = await fetch(`${URL}/competitions/user_comps/`, options);
       const data = await response.json();
       console.log(data);
       setCompDetails(data);
-    };
-    getCompetitionsAndScores();
+    } catch (error) {
+      console.warn(error);
+    }
+  };
+
+  useEffect(async () => {
+    await getCompetitionsAndScores();
+    console.log(compDetails);
   }, []);
 
-  // do this when auth server is fixed:
-  //   const comps = compdetails.map((c) => {
-  // return <p>{c.name}</p>
-  //   })
+  const competitionsScores = compDetails ? (
+    compDetails.map((c) => {
+      return (
+        <div key={c.id}>
+          <p onClick={() => navigate(`/competition/${c.id}`)}>{c.name}</p>
+          <p>{c.score.score}</p>
+        </div>
+      );
+    })
+  ) : (
+    <></>
+  );
   return (
-    <div className="profile-page">
+    <div className="profile-page" aria-label="Profile">
       <NavBar />
       <h1 id="nameTitle" className="profile-name">
-        {userDetails.username}
+        Name: {userDetails.username}
       </h1>
       <Link to="/editprofile">
         <button className = "btn btn-lg btn-warning"id="editProfileButton">Edit Profile</button>
       </Link>
+<<<<<<< HEAD
       <div id="competitionInfo">
         <h2 id="currentCompsTag" className="profile-name">
           Competitions {compDetails}
@@ -62,6 +89,17 @@ function Profile() {
           <h3> Futureproof</h3>
           <h3> 10</h3>
         </div>
+=======
+
+      <h2 id="currentCompsTag" className="profile-name">
+        Current Competitions
+      </h2>
+
+      <div className="competition-table">
+        <h3> Competition name</h3>
+        {competitionsScores}
+        <h3> Score</h3>
+>>>>>>> b31d542a44518cb18fec2431609e1d2016ca9df9
       </div>
       <Link to="/create-competition">
         <button id="create" className = "btn btn-lg btn-success">

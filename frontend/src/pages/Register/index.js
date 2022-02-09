@@ -25,7 +25,7 @@ function Register() {
           password: e.target.password.value,
           email: e.target.email.value,
         };
-        console.log(user);
+        // console.log(user);
         const options = {
           method: "POST",
           headers: { "Content-type": "application/json" },
@@ -34,18 +34,21 @@ function Register() {
 
         const response = await fetch(`${URL}/register/`, options);
         const data = await response.json();
+        console.log("data from register", data);
 
         // if (data.err) {
         //   throw Error(data.err);
         // }
 
-        if (!data.success) {
+        if (!data.token) {
           dispatch({
             type: "ERROR",
             payload: "Login not authorised",
           });
+          console.log("there was an error");
         } else {
-          dispatch(login(data.token));
+          localStorage.setItem("token", data.token);
+          dispatch(login(data.user));
         }
 
         navigate(`/profile`, { replace: true });
@@ -59,7 +62,11 @@ function Register() {
       <NavBar />
       <h1 id="registerTitle">Planet Pals</h1>
       <h4 id="slogan">Saving The World, One Competition At A Time</h4>
+<<<<<<< HEAD
 
+=======
+      <h2>Register</h2>
+>>>>>>> b31d542a44518cb18fec2431609e1d2016ca9df9
       <form onSubmit={handleFormSubmit} aria-label="register-form">
         {/* <label htmlFor="username">Name</label> */}
         <input type="username" name="username" id="username"placeholder="Username" />
@@ -72,7 +79,15 @@ function Register() {
 
         {error && <p>{error}</p>}
 
-        <input id="regbutton" className="btn btn-success btn-lg" type="submit" value="Register" aria-label="register-button" />
+
+        <input
+          id="regbutton"
+          className="btn-success btn btn-lg"
+          type="submit"
+          value="Register"
+          aria-label="register-button"
+        />
+
       </form>
       <p> OR</p>
       <p id = "loginButton" className="btn btn-primary btn-lg" onClick={() => navigate("/login")}>Click to Login</p>
