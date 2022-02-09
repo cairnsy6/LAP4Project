@@ -9,7 +9,11 @@ import "./competitionlist.css";
 
 function CompetitionList() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const userDetails = useSelector((state) => state.currentUser);
+
   const [competitions, setCompetitions] = useState([]);
+  const [userCompetitions, setUserCompetitions] = useState([]);
+
   const [ModalNotLoggedIn, openModalNotLoggedIn, closeModalNotLoggedIn] =
     useModal("root", {
       preventScroll: true,
@@ -31,6 +35,24 @@ function CompetitionList() {
     }
   };
 
+  const fetchUserCompetitions = async () => {
+    try {
+      const options = {
+        method: "POST",
+        body: JSON.stringify({ user_id: userDetails.id }),
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+      };
+      const response = await fetch(`${URL}/competitions/user_comps/`, options);
+      const data = await response.json();
+      setUserCompetitions(data);
+    } catch (error) {
+      console.warn(error);
+    }
+  };
+
   const handleCreate = (e) => {
     if (isLoggedIn) {
       navigate("/create-competition");
@@ -41,15 +63,22 @@ function CompetitionList() {
 
   useEffect(async () => {
     const comps = await fetchCompetitions();
+    isLoggedIn && (await fetchUserCompetitions());
     setCompetitions(comps);
   }, []);
 
   const navigate = useNavigate();
 
   const compList = competitions.length ? (
-    competitions.map((comp) => (
-      <CompetitionListItem competition={comp} key={comp.id} />
-    ))
+    competitions.map((comp) => {
+      const inCompetition = isLoggedIn
+        ? userCompetitions.filter((uComp) => uComp.id === comp.id)
+        : [];
+      const inComp = inCompetition.length ? true : false;
+      return (
+        <CompetitionListItem competition={comp} key={comp.id} inComp={inComp} />
+      );
+    })
   ) : (
     <></>
   );
@@ -57,7 +86,11 @@ function CompetitionList() {
     <div id="competitionDiv">
       <NavBar />
       <h1 id="competitionListTitle">Competitions</h1>
-      <button id="createCompButton" className= "btn btn-lg btn-success" onClick={handleCreate}>
+      <button
+        id="createCompButton"
+        className="btn btn-lg btn-success"
+        onClick={handleCreate}
+      >
         <span>Create a competition</span>
       </button>
 
