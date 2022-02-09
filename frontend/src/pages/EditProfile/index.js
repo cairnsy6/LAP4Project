@@ -14,7 +14,7 @@ function EditProfile() {
 
     const form = e.target;
 
-    if (form.password.value !== form.confirmpassword.value) {
+    if (form.password.value !== form.passwordconfirm.value) {
       setError("Please ensure your passwords match");
     } else {
       try {
@@ -39,10 +39,10 @@ function EditProfile() {
   // maybe /users/id
   // this fetch won't work until server up
   return (
-    <div>
+    <div aria-label="EditProfile">
       <NavBar />
       <h1>Update your profile </h1>
-      <form onSubmit={handleFormSubmit}>
+      <form aria-label="update-profile" onSubmit={handleFormSubmit}>
         <input type="text" name="username" id="username" placeholder="Username"/>
         <input type="password" name="password" id="password" placeholder="Password"/>
         <input type="password" name="passwordconfirm" id="passwordconfirm" placeholder ="Confirm Password" />

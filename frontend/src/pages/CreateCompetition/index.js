@@ -76,7 +76,7 @@ function CreateCompetition() {
     <div id="createCompDiv">
       <NavBar />
       <h1 aria-label="CreateCompetition">Create Competition </h1>
-      <form onSubmit={handleFormSubmit}>
+      <form aria-label="form" onSubmit={handleFormSubmit}>
         <input type="text" name="name" id="name" placeholder="Name" required />
         <input type="textarea" name="description" id="description" placeholder="Description" required />
         <input type="date" name="end_date" id="end-date" placeholder="End Date" required />
