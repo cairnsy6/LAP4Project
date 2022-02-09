@@ -8,8 +8,7 @@ import { NavBar } from "../../components";
 import "./login.css";
 
 function Login() {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -59,12 +58,14 @@ function Login() {
           type: "ERROR",
           payload: "Login not authorised",
         });
+        if (data["non_field_errors"]) {
+          setError("Incorrect username or password!");
+        }
       } else {
         localStorage.setItem("token", data.token);
         dispatch(login(data.user));
+        navigate(`/profile`, { replace: true });
       }
-
-      navigate(`/profile`, { replace: true });
     } catch (error) {
       console.warn(error);
     }
@@ -101,6 +102,7 @@ function Login() {
             Login
           </button>
         </form>
+        <p>{error}</p>
         <p>
           Don't have an account?
           <span onClick={() => navigate("/register")}>Register</span>
