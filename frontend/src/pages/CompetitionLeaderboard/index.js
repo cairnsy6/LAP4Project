@@ -252,7 +252,7 @@ function CompetitionLeaderboard() {
                       ) : (
                         <>
                           <p>Add to your score:</p>
-                          <form onSubmit={handleDailyUpdate}>
+                          <form aria-label="update-score" onSubmit={handleDailyUpdate}>
                             <label htmlFor="score-update">
                               Did you achieve the goal of {leaderboard.units}
                               today?

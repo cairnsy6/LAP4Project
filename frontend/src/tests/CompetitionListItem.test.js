@@ -10,12 +10,15 @@
  import { store } from "../redux/store/store";
  
  describe("CompetitionListItem", () => {
+    const redux = require('react-redux')
     const competition = {id: 1, name: "test comp", end_date: "2022-04-01"}
     global.fetch = jest.fn(() =>
     Promise.resolve({
     json: () => Promise.resolve([{id: 1, name: "test name", description: "test desc", units: "test units", frquency:1, end_date: "2022-04-01"}])
     }))
-   beforeAll(() => {
+   beforeEach(() => {
+    jest.spyOn(redux, 'useSelector');
+    redux.useSelector = jest.fn().mockReturnValue(true);
      render(
        <Provider store={store}>
          <CompetitionListItem competition={competition} />
