@@ -148,7 +148,7 @@ function CompetitionLeaderboard() {
     }
   };
   return (
-    <div id="competitionLeaderboardDiv">
+    <div id="competitionLeaderboardDiv" aria-label="leaderboard">
       <NavBar />
       {isLoggedIn && (
         <>

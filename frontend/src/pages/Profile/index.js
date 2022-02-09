@@ -11,25 +11,25 @@ function Profile() {
   const userDetails = useSelector((state) => state.currentUser);
   const [compDetails, setCompDetails] = useState();
 
-  useEffect(() => {
-    const getCompetitionsAndScores = async () => {
-      const response = await fetch(`${URL}/competitions/user_comps/`);
-      const data = await response.json();
-      console.log(data);
-      setCompDetails(data);
-    };
-    getCompetitionsAndScores();
-  }, []);
+  // useEffect(() => {
+  //   const getCompetitionsAndScores = async () => {
+  //     const response = await fetch(`${URL}/competitions/user_comps/`);
+  //     const data = await response.json();
+  //     console.log(data);
+  //     setCompDetails(data);
+  //   };
+  //   getCompetitionsAndScores();
+  // }, []);
 
   // do this when auth server is fixed:
   //   const comps = compdetails.map((c) => {
   // return <p>{c.name}</p>
   //   })
   return (
-    <div className="profile-page">
+    <div className="profile-page" aria-label="Profile">
       <NavBar />
       <h1 id="nameTitle" className="profile-name">
-        {userDetails.username}
+        Name:{userDetails.username}
       </h1>
       <Link to="/editprofile">
         <button id="editProfileButton">Edit Profile?</button>

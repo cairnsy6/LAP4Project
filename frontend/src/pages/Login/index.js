@@ -52,24 +52,25 @@ function Login() {
       };
       const response = await fetch(`${URL}/login/`, options);
       const data = await response.json();
+      console.log("login data", data);
       // dispatch(requestLogin(userLogin));
-      if (!data.success) {
+      if (!data.token) {
         dispatch({
           type: "ERROR",
           payload: "Login not authorised",
         });
       } else {
-        dispatch(login(data.token));
+        dispatch(login(data.user));
       }
 
-      navigate(`profile`, { replace: true });
+      // navigate(`/profile`, { replace: true });
     } catch (error) {
       console.warn(error);
     }
   };
 
   return (
-    <main className="loginmain">
+    <main className="loginmain" aria-label="loginmain">
       <NavBar />
       <div className="loginbody">
         <form onSubmit={handleFormSubmit}>
