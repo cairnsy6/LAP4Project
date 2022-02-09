@@ -60,7 +60,7 @@ function Login() {
           payload: "Login not authorised",
         });
       } else {
-        dispatch(login(data.token));
+        dispatch(login(data.user));
       }
 
       // navigate(`/profile`, { replace: true });

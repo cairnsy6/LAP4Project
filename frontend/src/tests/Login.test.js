@@ -22,4 +22,8 @@ describe("Login", () => {
     let log = screen.getByLabelText("loginmain");
     expect(log).toBeInTheDocument();
   });
+  test("it renders the login page", () => {
+    const login = screen.getByLabelText("Login");
+    expect(login).toBeTruthy();
+  });
 });
