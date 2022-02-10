@@ -63,8 +63,6 @@ function CompetitionLeaderboard() {
 				return;
 			} else {
 				const data = await response.json();
-
-				userDetails.id === data.host_id && setIsUserHost(true);
 				return data;
 			}
 		} catch (error) {
@@ -132,18 +130,15 @@ function CompetitionLeaderboard() {
 	}, [userScoreObject]);
 
 	useEffect(async () => {
-		if (!isLoggedIn) {
-			navigate("/login");
-		}
+		!isLoggedIn && navigate("/login");
+
 		const lboard = await getCompetitionData();
 		if (lboard) {
 			setLeaderboard(lboard);
-			if (lboard.scores.length) {
-				setIsLeaderboard(true);
-			}
-			if (lboard.end_date < todayString) {
-				setCompleted(true);
-			}
+			userDetails.id === lboard.host_id && setIsUserHost(true);
+			lboard.scores.length > 0 && setIsLeaderboard(true);
+			lboard.end_date < todayString && setCompleted(true);
+
 			const userScore = lboard.scores.filter(score => score.user_id === userDetails.id);
 			if (userScore.length) {
 				setIsUserInCompetition(true);
@@ -151,12 +146,6 @@ function CompetitionLeaderboard() {
 			}
 		}
 	}, []);
-
-	const leaderboardDisplay = isLeaderboard
-		? leaderboard.scores.map(score => <LeaderboardItem score={score} key={score.id} />)
-		: [];
-
-	// competition_type: 1 is daily, competition_type: 2 is rolling total
 
 	const handleJoinClick = async e => {
 		e.preventDefault();
@@ -179,13 +168,16 @@ function CompetitionLeaderboard() {
 			const data = await response.json();
 			setIsUserInCompetition(true);
 			setUserScoreObject(data);
-			console.log(data);
 		} catch (error) {
 			console.warn(error);
 		}
 	};
 
-	let manage = leaderboard.scores.length ? (
+	const leaderboardDisplay = isLeaderboard
+		? leaderboard.scores.map(score => <LeaderboardItem score={score} key={score.id} />)
+		: [];
+
+	const manage = leaderboard.scores.length ? (
 		leaderboard.scores.map(u => {
 			return (
 				<div key={u.id}>
@@ -216,9 +208,6 @@ function CompetitionLeaderboard() {
 				}
 			};
 			const res = await fetch(`${URL}/competitions/${ID}`, options);
-			console.log(res);
-			// const dta = await res.json();
-			// console.log(dta);
 			navigate(`/profile`);
 		} catch (error) {
 			console.warn(error);
