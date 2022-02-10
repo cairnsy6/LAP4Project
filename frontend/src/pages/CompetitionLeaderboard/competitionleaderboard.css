@@ -26,6 +26,14 @@
   margin-top:1rem;
   border-radius:3rem;
 }
+#score-update-box{
+  width:200px;
+  height:40px;
+  display: block;
+  margin-left: 26%;
+  margin-top:1rem;
+ 
+}
 
 
 .leaderboardItemTable{
@@ -55,4 +63,24 @@
   width: 40%;
   height: 20%;
   display: inline-block;
+  background-color: rgb(233, 87, 111);
 }
+
+.leaveCompButton{
+  background-color: rgb(233, 87, 111);
+}
+
+.linkText{
+  text-align: center;
+  font-size:25px;
+  font-weight:bold;
+  text-shadow: 2px 2px 2px black;
+  margin-top: 2rem;
+  margin-bottom:-20px;
+}
+
+#leaderboardTitleText{
+  font-size:2rem;
+  text-shadow: 2px 2px 2px black;
+}
+

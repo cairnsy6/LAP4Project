@@ -249,7 +249,7 @@ function CompetitionLeaderboard() {
 														<>
 															<form aria-label="update-score" onSubmit={handleDailyUpdate}>
 																<label htmlFor="score-update">
-																	Did you achieve the goal of {leaderboard.units} today?
+																	Did you achieve the goal of <br></br>{leaderboard.units} today?
 																</label>
 																<input
                                 id="score-update"
@@ -274,8 +274,8 @@ function CompetitionLeaderboard() {
 													<form onSubmit={handleTotallingUpdate}>
 														<label htmlFor="score-update">Add {leaderboard.units}</label>
 														<input
-                              id="score-update"
-                              className="form-control"
+                              id="score-update-box"
+                              className="form-check-input"
 															type="number"
 															name="score-update"
 															required
@@ -284,7 +284,7 @@ function CompetitionLeaderboard() {
 														/>
 														<input
                               id="updateScoreCompetition"
-															className="btn btn-lg btn-primary"
+															className="btn btn-lg btn-success"
 															type="submit"
 															value="Update score"
 														/>
@@ -292,12 +292,12 @@ function CompetitionLeaderboard() {
 												</>
 											)}
                       <div className="leaderboardItemTable">
-							<h3>Leaderboard</h3>
+							<h3 id="leaderboardTitleText">Leaderboard</h3>
 							{isLeaderboard ? <ol>{leaderboardDisplay}</ol> : <p>No scores to display</p>}
               </div>
               {!isUserHost &&
 											<button
-												className="btn btn-lg btn-success"
+												className="btn btn-lg btn-danger leaveCompButton"
 												onClick={openLeaveCompetitionWarning}
 											>
 												Leave competition
@@ -312,9 +312,9 @@ function CompetitionLeaderboard() {
 								<p>This competition is completed!</p>
 							)}
              
-							<p>Share the link to invite others to this competition!</p>
+							<p className="linkText">Share the link to invite others<br></br> to this competition!</p>
              
-							<button
+							<button className="btn btn-lg btn-success copyLinkButton"
 								onClick={() => {
 									navigator.clipboard.writeText(window.location.href);
 								}}
@@ -329,7 +329,7 @@ function CompetitionLeaderboard() {
 			{isUserHost && (
 				<div className="hostButtons">
 					<button
-						className="btn btn-lg btn-success manageCompButton"
+						className="btn btn-lg btn-primary manageCompButton"
 						onClick={() => {
 							setShowManage(!showManage);
 						}}
@@ -337,7 +337,7 @@ function CompetitionLeaderboard() {
 						Manage participants
 					</button>
 					<div>{showManage && manage}</div>
-					<button className="btn btn-lg btn-success deleteCompButton" onClick={() => openDeleteCompetitionWarning()}>
+					<button className="btn btn-lg btn-danger deleteCompButton" onClick={() => openDeleteCompetitionWarning()}>
 						Delete Competition
 					</button>
 				</div>
