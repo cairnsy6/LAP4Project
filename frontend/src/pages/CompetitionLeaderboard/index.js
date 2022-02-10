@@ -64,6 +64,7 @@ function CompetitionLeaderboard() {
 				return;
 			} else {
 				const data = await response.json();
+				console.log(data);
 				return data;
 			}
 		} catch (error) {
@@ -165,18 +166,18 @@ function CompetitionLeaderboard() {
 			if (u.user.id !== userDetails.id) {
 				return (
 					<div className="manageParticipants" key={u.id}>
-          <div className="removeParticipant">
-						<p class="removeParticipantUsername">{u.user.username}</p>
-						<button
-							className="btn btn-lg btn-success removeParticipantButton"
-							onClick={() => {
-								setUserToDeleteDetails(u);
-								openRemoveUserWarning();
-							}}
-						>
-							X
-						</button>
-            </div>
+						<div className="removeParticipant">
+							<p class="removeParticipantUsername">{u.user.username}</p>
+							<button
+								className="btn btn-lg btn-success removeParticipantButton"
+								onClick={() => {
+									setUserToDeleteDetails(u);
+									openRemoveUserWarning();
+								}}
+							>
+								X
+							</button>
+						</div>
 					</div>
 				);
 			}
@@ -354,8 +355,11 @@ function CompetitionLeaderboard() {
 			<DeleteCompetitionWarning>
 				<div className="modalP">
 					<p>Are you sure you want to delete this competition?</p>
-					<button className="modalButton" onClick={closeDeleteCompetitionWarning}>Cancel</button>
-					<button className="modalButton"
+					<button className="modalButton" onClick={closeDeleteCompetitionWarning}>
+						Cancel
+					</button>
+					<button
+						className="modalButton"
 						onClick={() => {
 							closeDeleteCompetitionWarning();
 							handleDeleteCompetition();
@@ -368,38 +372,46 @@ function CompetitionLeaderboard() {
 
 			<LeaveCompetitionWarning>
 				<div className="modalP">
-				<p>Are you sure you want to leave the competition?</p>
-				<button className="modalButton" onClick={closeLeaveCompetitionWarning}>Cancel</button>
-				<button className="modalButton"
-					onClick={() => {
-						closeLeaveCompetitionWarning();
-						handleUserLeavingComp(userScoreObject);
-					}}
-				>
-					Leave
-				</button>
+					<p>Are you sure you want to leave the competition?</p>
+					<button className="modalButton" onClick={closeLeaveCompetitionWarning}>
+						Cancel
+					</button>
+					<button
+						className="modalButton"
+						onClick={() => {
+							closeLeaveCompetitionWarning();
+							handleUserLeavingComp(userScoreObject);
+						}}
+					>
+						Leave
+					</button>
 				</div>
 			</LeaveCompetitionWarning>
 			{userToDeleteDetails && (
 				<RemoveUserWarning>
 					<div className="modalP">
-					<p>Are you sure you want to remove {userToDeleteDetails.user.username}?</p>
-					<button className="modalButton" onClick={closeRemoveUserWarning}>Cancel</button>
-					<button className="modalButton"
-						onClick={() => {
-							closeRemoveUserWarning();
-							handleUserLeavingComp(userToDeleteDetails);
-						}}
-					>
-						Remove
-					</button>
+						<p>Are you sure you want to remove {userToDeleteDetails.user.username}?</p>
+						<button className="modalButton" onClick={closeRemoveUserWarning}>
+							Cancel
+						</button>
+						<button
+							className="modalButton"
+							onClick={() => {
+								closeRemoveUserWarning();
+								handleUserLeavingComp(userToDeleteDetails);
+							}}
+						>
+							Remove
+						</button>
 					</div>
 				</RemoveUserWarning>
 			)}
 			{!isLoggedIn && (
 				<div className="modalP">
 					<p>You must be logged in to view the details of competitions!</p>
-					<button className="modalButton" onClick={() => navigate("/login")}>Login</button>
+					<button className="modalButton" onClick={() => navigate("/login")}>
+						Login
+					</button>
 				</div>
 			)}
 		</div>

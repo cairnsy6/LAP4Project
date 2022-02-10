@@ -30,10 +30,8 @@ function Profile() {
 					Authorization: `token ${localStorage.getItem("token")}`
 				}
 			};
-			// console.log(localStorage.getItem("token"));
 			const response = await fetch(`${URL}/competitions/user_comps/`, options);
 			const data = await response.json();
-			console.log(data);
 			setCompDetails(data);
 		} catch (error) {
 			console.warn(error);
@@ -43,7 +41,6 @@ function Profile() {
 	useEffect(async () => {
 		!isLoggedIn && navigate("/login");
 		await getCompetitionsAndScores();
-		console.log(compDetails);
 	}, []);
 
 	const competitionScores = compDetails ? (
