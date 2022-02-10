@@ -22,6 +22,7 @@ function CompetitionLeaderboard() {
 	const [showManage, setShowManage] = useState(false);
 	const [userToDeleteDetails, setUserToDeleteDetails] = useState();
 	const [isUserHost, setIsUserHost] = useState(false);
+	const [isUserRemoved, setIsUserRemoved] = useState(false);
 
 	const [LeaveCompetitionWarning, openLeaveCompetitionWarning, closeLeaveCompetitionWarning] =
 		useModal("root", {
@@ -118,34 +119,16 @@ function CompetitionLeaderboard() {
 		}
 	};
 
-	const handleUserLeavingComp = async () => {
-		await removeUserFromCompetition(userScoreObject);
-		setIsUserInCompetition(false);
-		setUserScoreObject({ score: 0, last_updated: "" });
-	};
-
-	useEffect(async () => {
-		const comp = await getCompetitionData();
-		setLeaderboard(comp);
-	}, [userScoreObject]);
-
-	useEffect(async () => {
-		!isLoggedIn && navigate("/login");
-
-		const lboard = await getCompetitionData();
-		if (lboard) {
-			setLeaderboard(lboard);
-			userDetails.id === lboard.host_id && setIsUserHost(true);
-			lboard.scores.length > 0 && setIsLeaderboard(true);
-			lboard.end_date < todayString && setCompleted(true);
-
-			const userScore = lboard.scores.filter(score => score.user_id === userDetails.id);
-			if (userScore.length) {
-				setIsUserInCompetition(true);
-				setUserScoreObject(userScore[0]);
-			}
+	const handleUserLeavingComp = async user => {
+		await removeUserFromCompetition(user);
+		if (user.id === userDetails.id) {
+			setIsUserInCompetition(false);
+			setUserScoreObject({ score: 0, last_updated: "" });
+		} else {
+			setUserScoreObject(userScoreObject);
+			setIsUserRemoved(!isUserRemoved);
 		}
-	}, []);
+	};
 
 	const handleJoinClick = async e => {
 		e.preventDefault();
@@ -186,8 +169,8 @@ function CompetitionLeaderboard() {
 						<button
 							className="btn btn-lg btn-success"
 							onClick={() => {
-								openRemoveUserWarning();
 								setUserToDeleteDetails(u);
+								openRemoveUserWarning();
 							}}
 						>
 							Remove participant
@@ -215,6 +198,29 @@ function CompetitionLeaderboard() {
 			console.warn(error);
 		}
 	};
+
+	useEffect(async () => {
+		const comp = await getCompetitionData();
+		setLeaderboard(comp);
+	}, [userScoreObject, isUserRemoved]);
+
+	useEffect(async () => {
+		!isLoggedIn && navigate("/login");
+
+		const lboard = await getCompetitionData();
+		if (lboard) {
+			setLeaderboard(lboard);
+			userDetails.id === lboard.host_id && setIsUserHost(true);
+			lboard.scores.length > 0 && setIsLeaderboard(true);
+			lboard.end_date < todayString && setCompleted(true);
+
+			const userScore = lboard.scores.filter(score => score.user_id === userDetails.id);
+			if (userScore.length) {
+				setIsUserInCompetition(true);
+				setUserScoreObject(userScore[0]);
+			}
+		}
+	}, []);
 
 	return (
 		<div id="competitionLeaderboardDiv" aria-label="leaderboard">

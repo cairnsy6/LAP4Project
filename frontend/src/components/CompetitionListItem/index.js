@@ -20,31 +20,6 @@ function CompetitionListItem({ competition, openPopUp }) {
 	let dateReformatted = competition.end_date.split("-");
 	dateReformatted = `${dateReformatted[2]}/${dateReformatted[1]}/${dateReformatted[0]}`;
 
-	// const handleJoinClick = async (e) => {
-	//   e.preventDefault();
-	//   try {
-	//     const competitionDetails = {
-	//       user_id: userDetails.id,
-	//       competition_id: competition.id,
-	//       score: 0,
-	//       last_updated: "2000-01-01",
-	//     };
-	//     const options = {
-	//       method: "POST",
-	//       headers: {
-	//         "Content-type": "application/json",
-	//         Authorization: `token ${localStorage.getItem("token")}`,
-	//       },
-	//       body: JSON.stringify(competitionDetails),
-	//     };
-	//     const response = await fetch(`${URL}/scores/`, options);
-	//     const data = await response.json();
-	//     navigate(`/competition/${competition.id}`, { replace: true });
-	//   } catch (error) {
-	//     console.warn(error);
-	//   }
-	// };
-
 	const handleTitleClick = () => {
 		isLoggedIn ? navigate(`/competition/${competition.id}`) : openPopUp();
 	};
