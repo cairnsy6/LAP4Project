@@ -85,7 +85,7 @@ function Register() {
 					required
 				/>
 
-				{error && <p>{error}</p>}
+				{error && <p id="errorTextRegister">{error}</p>}
 
 				<input
 					id="regbutton"
