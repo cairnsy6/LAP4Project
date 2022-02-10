@@ -69,15 +69,23 @@ function Register() {
           name="username"
           id="username"
           placeholder="Username"
+          required
         />
         {/* <label htmlFor="email">Email</label> */}
-        <input type="email" name="email" id="email" placeholder="Email" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          required
+        />
         {/* <label htmlFor="password">Password</label> */}
         <input
           type="password"
           name="password"
           id="password"
           placeholder="Password"
+          required
         />
         {/* <label htmlFor="passwordconfirm" id= "confirmPasswordLabel">Confirm Password</label> */}
         <input
@@ -85,6 +93,7 @@ function Register() {
           name="passwordconfirm"
           id="passwordconfirm"
           placeholder="Confirm Password"
+          required
         />
 
         {error && <p>{error}</p>}

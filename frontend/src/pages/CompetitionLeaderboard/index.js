@@ -253,15 +253,9 @@ function CompetitionLeaderboard() {
                         <>
                           <form aria-label="update-score" onSubmit={handleDailyUpdate}>
                             <label htmlFor="score-update">
-                              Did you achieve the goal of {leaderboard.units}
-                              today?
+                              Did you achieve the goal of {leaderboard.units} today?
                             </label>
-                            <input 
-                              id="score-update"
-                              type="checkbox"
-                              name="score-update"
-                              required
-                            />
+                            <input class="form-check-input" id="score-update" type="checkbox" name="score-update"/>
                             <input className="btn btn-lg btn-success" type="submit" value="Update score" />
                           </form>
                         </>
@@ -281,23 +275,27 @@ function CompetitionLeaderboard() {
                           value={totalInput}
                           onChange={handleTotalInput}
                         />
-                        <input className="btn btn-lg btn-primary" type="submit" value="Update score" />
+                        <input id="updateScoreCompetition" className="btn btn-lg btn-primary" type="submit" value="Update score" />
                       </form>
                     </>
                   )}
-                  <button className="btn btn-lg btn-success" onClick={openLeaveCompetitionWarning}>
-                    Leave competition
-                  </button>
-                </>
-              ) : (
-                <button onClick={handleJoinClick}>Join competition</button>
-              )}
-              <h3>Leaderboard</h3>
+                  <h3>Leaderboard</h3>
               {isLeaderboard ? (
                 <ol>{leaderboardDisplay}</ol>
               ) : (
                 <p>No scores to display</p>
               )}
+              {! isUserHost && 
+                  <button className="btn btn-lg btn-success" onClick={openLeaveCompetitionWarning}>
+                    Leave competition
+                  </button>
+              }
+                </>
+              
+              ) : (
+                <button onClick={handleJoinClick}>Join competition</button>
+              )}
+             
             </>
           )}
         </>
