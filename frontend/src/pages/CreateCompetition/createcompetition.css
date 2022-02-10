@@ -58,3 +58,19 @@ svg{color:white}
 .createbutton{
   width:50%;
 }
+.modalP{
+  background-color: yellow;
+  color:brown;
+  width:80%;
+  margin-left: 10%;
+  margin-right:10% ;
+  padding: 10px;
+  border-radius: 1rem;
+}
+
+.modalButton{
+  margin-top: 0%;
+  text-shadow: none;
+  
+
+}

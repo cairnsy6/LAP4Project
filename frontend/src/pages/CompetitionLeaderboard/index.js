@@ -330,24 +330,27 @@ function CompetitionLeaderboard() {
 				</div>
 			)}
 			<DeleteCompetitionWarning>
-				<p>Are you sure you want to delete this competition?</p>
-				<button onClick={closeDeleteCompetitionWarning}>Cancel</button>
-				<button
-					onClick={() => {
-						closeDeleteCompetitionWarning();
-						handleDeleteCompetition();
-					}}
-				>
-					Delete
-				</button>
+				<div className="modalP">
+					<p>Are you sure you want to delete this competition?</p>
+					<button className="modalButton" onClick={closeDeleteCompetitionWarning}>Cancel</button>
+					<button className="modalButton"
+						onClick={() => {
+							closeDeleteCompetitionWarning();
+							handleDeleteCompetition();
+						}}
+					>
+						Delete
+					</button>
+				</div>
 			</DeleteCompetitionWarning>
 
 			{/* Bethan */}
 
 			<LeaveCompetitionWarning>
+				<div className="modalP">
 				<p>Are you sure you want to leave the competition?</p>
-				<button onClick={closeLeaveCompetitionWarning}>Cancel</button>
-				<button
+				<button className="modalButton" onClick={closeLeaveCompetitionWarning}>Cancel</button>
+				<button className="modalButton"
 					onClick={() => {
 						closeLeaveCompetitionWarning();
 						handleUserLeavingComp(userScoreObject);
@@ -355,12 +358,14 @@ function CompetitionLeaderboard() {
 				>
 					Leave
 				</button>
+				</div>
 			</LeaveCompetitionWarning>
 			{userToDeleteDetails && (
 				<RemoveUserWarning>
+					<div className="modalP">
 					<p>Are you sure you want to remove {userToDeleteDetails.user.username}?</p>
-					<button onClick={closeRemoveUserWarning}>Cancel</button>
-					<button
+					<button className="modalButton" onClick={closeRemoveUserWarning}>Cancel</button>
+					<button className="modalButton"
 						onClick={() => {
 							closeRemoveUserWarning();
 							handleUserLeavingComp(userToDeleteDetails);
@@ -368,13 +373,14 @@ function CompetitionLeaderboard() {
 					>
 						Remove
 					</button>
+					</div>
 				</RemoveUserWarning>
 			)}
 			{!isLoggedIn && (
-				<>
+				<div className="modalP">
 					<p>You must be logged in to view the details of competitions!</p>
-					<button onClick={() => navigate("/login")}>Login</button>
-				</>
+					<button className="modalButton" onClick={() => navigate("/login")}>Login</button>
+				</div>
 			)}
 		</div>
 	);

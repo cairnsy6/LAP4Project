@@ -9,7 +9,12 @@
   height: 100vh;
   width: 100%; */
 }
+.modalButton{
+  margin-top: 0%;
+  text-shadow: none;
+  
 
+}
 #competitionListTitle {
   margin-bottom: -1%;
   color:white;

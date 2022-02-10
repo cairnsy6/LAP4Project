@@ -146,21 +146,26 @@ function CreateCompetition() {
 			</form>
 
 			<UnitsHelp className="pop-up modal">
-				<p className="modal">
-					How are you going to measure progress on your competition?/n Eg. taking public transport,
+			<div className="modalP">
+				<p >
+					How are you going to measure progress on your competition?<br></br>
+					Eg. taking public transport,
 					cups recycled, lights turned off.
 				</p>
-				<button onClick={closeUnitsHelp}>Close</button>
+				<button className="btn btn-lg btn-light modalButton" onClick={closeUnitsHelp}>Close</button>
+				</div>
 			</UnitsHelp>
 
 			<FrequencyHelp className="pop-up">
-				<p className="modal">
+			<div className="modalP">
+				<p >
 					Is your goal something that can be marked as achieved daily (eg. taking public transport
 					to work, or bringing in your own lunch from home) or something that has a score that you
 					want to be able to keep adding periodically (eg. turning off unused lights, or hours of
 					volunteering)
 				</p>
-				<button onClick={closeFrequencyHelp}>Close</button>
+				<button className="btn btn-lg btn-light modalButton" onClick={closeFrequencyHelp}>Close</button>
+			</div>
 			</FrequencyHelp>
 		</div>
 	);
