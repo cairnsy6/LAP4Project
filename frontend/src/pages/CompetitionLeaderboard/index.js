@@ -236,6 +236,14 @@ function CompetitionLeaderboard() {
 						<>
 							<h2 id="leaderboardnameh2">{leaderboard.name}</h2>
 							<p id="leaderboarddescriptionp">{leaderboard.description}</p>
+							<p>Share the link to invite others to this competition!</p>
+							<button
+								onClick={() => {
+									navigator.clipboard.writeText(window.location.href);
+								}}
+							>
+								Copy Link
+							</button>
 
 							{!completed ? (
 								<>
