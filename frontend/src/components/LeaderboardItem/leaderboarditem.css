@@ -1,12 +1,17 @@
 .current{
     list-style-position:inside ;
+    font-size:30px;
+    color:yellow;
+    text-align: left;
+    margin-left: 3rem;
+    
 
 }
 .other{
     list-style-position:inside ;
-
+    font-size:30px;
+    text-align: left;
+    margin-left: 3rem;
 }
 
-#leaderboarditemli{
-    font-size: 20px;
-}
+

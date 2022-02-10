@@ -256,7 +256,7 @@ function CompetitionLeaderboard() {
                               Did you achieve the goal of {leaderboard.units} today?
                             </label>
                             <input class="form-check-input" id="score-update" type="checkbox" name="score-update"/>
-                            <input className="btn btn-lg btn-success" type="submit" value="Update score" />
+                            <input id="updateScoreCompetition" className="btn btn-lg btn-success" type="submit" value="Update score" />
                           </form>
                         </>
                       )}
@@ -275,16 +275,18 @@ function CompetitionLeaderboard() {
                           value={totalInput}
                           onChange={handleTotalInput}
                         />
-                        <input id="updateScoreCompetition" className="btn btn-lg btn-primary" type="submit" value="Update score" />
+                        <input id="updateScoreCompetition" className="btn btn-lg btn-success" type="submit" value="Update score" />
                       </form>
                     </>
                   )}
+                  <div className="leaderboardItemTable">
                   <h3>Leaderboard</h3>
               {isLeaderboard ? (
                 <ol>{leaderboardDisplay}</ol>
               ) : (
                 <p>No scores to display</p>
               )}
+              </div>
               {! isUserHost && 
                   <button className="btn btn-lg btn-success" onClick={openLeaveCompetitionWarning}>
                     Leave competition

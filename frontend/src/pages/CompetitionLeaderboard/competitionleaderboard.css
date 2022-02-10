@@ -14,6 +14,7 @@
 #updateScoreCompetition{
   width:50%;
   border-radius: 1rem;
+  text-shadow: 2px 2px 2px black;
 
 }
 
@@ -24,4 +25,16 @@
   margin-left: 40%;
   margin-top:1rem;
   border-radius:3rem;
+}
+
+
+.leaderboardItemTable{
+    border:2px solid black;
+    width:80%;
+    height: 40vh;
+    margin-left:10%;
+    border-radius: 2rem;
+    box-shadow: 3px 3px 3px black;
+    background:rgba(33, 236, 111, 0.6);
+    overflow:auto;
 }
