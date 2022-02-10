@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 
 import { URL } from "../../serverUrl";
-import { login, requestLogin } from "../../redux/actions/action";
+import { login } from "../../redux/actions/action";
 import { NavBar } from "../../components";
 import "./login.css";
 
@@ -28,15 +28,12 @@ function Login() {
 			};
 			const response = await fetch(`${URL}/login/`, options);
 			const data = await response.json();
-			console.log("login data", data);
-			// dispatch(requestLogin(userLogin));
 			if (!data.token) {
 				dispatch({
 					type: "ERROR",
 					payload: "Login not authorised"
 				});
 				if (data["non_field_errors"]) {
-					console.log("error");
 					setError("Incorrect username or password!");
 				}
 			} else {

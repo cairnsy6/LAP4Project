@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { requestLogin, logout, login } from "../../redux/actions/action";
+import { login } from "../../redux/actions/action";
 
 import { NavBar } from "../../components";
 import { URL } from "../../serverUrl";
@@ -25,7 +25,6 @@ function Register() {
 					password: e.target.password.value,
 					email: e.target.email.value
 				};
-				// console.log(user);
 				const options = {
 					method: "POST",
 					headers: { "Content-type": "application/json" },
@@ -34,18 +33,12 @@ function Register() {
 
 				const response = await fetch(`${URL}/register/`, options);
 				const data = await response.json();
-				console.log("data from register", data);
-
-				// if (data.err) {
-				//   throw Error(data.err);
-				// }
 
 				if (!data.token) {
 					dispatch({
 						type: "ERROR",
 						payload: "Login not authorised"
 					});
-					console.log("there was an error");
 					setError(data.username);
 				} else {
 					localStorage.setItem("token", data.token);

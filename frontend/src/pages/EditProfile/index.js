@@ -37,10 +37,8 @@ function EditProfile() {
 						Authorization: `token ${localStorage.getItem("token")}`
 					}
 				};
-				console.log(options.body);
 				const response = await fetch(`${URL}/users/${userDetails.id}`, options);
 				const data = await response.json();
-				console.log(data);
 				dispatch(login(data));
 				navigate(`/profile`, { replace: true });
 			} catch (error) {
