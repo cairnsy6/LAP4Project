@@ -89,19 +89,19 @@ function CompetitionList() {
 			)}
 
 			<ModalNotLoggedInCreate>
-				<div className="pop-up">
+				<div className="modalP">
 					<h3>You must be logged in to create a competition</h3>
-					<button id="pop-up-login-btn" onClick={() => navigate("/login")}>
+					<button id="modalButton" onClick={() => navigate("/login")}>
 						Login
 					</button>
-					<button id="close-pop-up-btn" onClick={closeModalNotLoggedInCreate}>
+					<button id="modalButton" onClick={closeModalNotLoggedInCreate}>
 						Close
 					</button>
 				</div>
 			</ModalNotLoggedInCreate>
 
 			<ModalNotLoggedInDetails>
-				<div className="pop-up">
+				<div className="modalP">
 					<h3>You must be logged in to view details of a competition</h3>
 					<button id="pop-up-login-btn" onClick={() => navigate("/login")}>
 						Login
