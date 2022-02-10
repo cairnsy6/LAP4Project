@@ -197,7 +197,7 @@ function CompetitionLeaderboard() {
       return (
         <div key={u.id}>
           <p>{u.user.username}</p>
-          <button
+          <button className="btn btn-lg btn-success"
             onClick={() => {
               openRemoveUserWarning();
               setUserToDeleteDetails(u);
@@ -241,7 +241,7 @@ function CompetitionLeaderboard() {
           ) : (
             <>
               <h2 id="leaderboardnameh2">{leaderboard.name}</h2>
-              <p id="leaderboardnameh2">{leaderboard.description}</p>
+              <p id="leaderboarddescriptionp">{leaderboard.description}</p>
 
               {isUserInCompetition ? (
                 <>
@@ -251,19 +251,18 @@ function CompetitionLeaderboard() {
                         <p>Well done for {leaderboard.units} today!</p>
                       ) : (
                         <>
-                          <p>Add to your score:</p>
                           <form aria-label="update-score" onSubmit={handleDailyUpdate}>
                             <label htmlFor="score-update">
                               Did you achieve the goal of {leaderboard.units}
                               today?
                             </label>
-                            <input
+                            <input 
                               id="score-update"
                               type="checkbox"
                               name="score-update"
                               required
                             />
-                            <input type="submit" value="Update score" />
+                            <input className="btn btn-lg btn-success" type="submit" value="Update score" />
                           </form>
                         </>
                       )}
@@ -271,7 +270,6 @@ function CompetitionLeaderboard() {
                   )}
                   {leaderboard.frequency === "2" && (
                     <>
-                      <p>Add to your score:</p>
                       <form onSubmit={handleTotallingUpdate}>
                         <label htmlFor="score-update">
                           Add {leaderboard.units}
@@ -283,11 +281,11 @@ function CompetitionLeaderboard() {
                           value={totalInput}
                           onChange={handleTotalInput}
                         />
-                        <input type="submit" value="Update score" />
+                        <input className="btn btn-lg btn-primary" type="submit" value="Update score" />
                       </form>
                     </>
                   )}
-                  <button onClick={openLeaveCompetitionWarning}>
+                  <button className="btn btn-lg btn-success" onClick={openLeaveCompetitionWarning}>
                     Leave competition
                   </button>
                 </>
@@ -306,7 +304,7 @@ function CompetitionLeaderboard() {
       )}
       {isUserHost && (
         <div>
-          <button
+          <button className="btn btn-lg btn-success"
             onClick={() => {
               setShowManage(!showManage);
             }}
@@ -314,7 +312,7 @@ function CompetitionLeaderboard() {
             Manage participants
           </button>
           <div>{showManage && manage}</div>
-          <button onClick={() => openDeleteCompetitionWarning()}>
+          <button className="btn btn-lg btn-success" onClick={() => openDeleteCompetitionWarning()}>
             Delete Competition
           </button>
         </div>
