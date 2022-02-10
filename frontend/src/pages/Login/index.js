@@ -8,8 +8,7 @@ import { NavBar } from "../../components";
 import "./login.css";
 
 function Login() {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -59,12 +58,14 @@ function Login() {
           type: "ERROR",
           payload: "Login not authorised",
         });
+        if (data["non_field_errors"]) {
+          setError("Incorrect username or password!");
+        }
       } else {
         localStorage.setItem("token", data.token);
         dispatch(login(data.user));
+        navigate(`/profile`, { replace: true });
       }
-
-      navigate(`/profile`, { replace: true });
     } catch (error) {
       console.warn(error);
     }
@@ -73,15 +74,18 @@ function Login() {
   return (
     <main className="loginmain" aria-label="loginmain">
       <NavBar />
+      <h1 id="loginTitle">Planet Pals</h1>
+      <h4 id="slogan">Saving The World, One Competition At A Time</h4>
+
       <div className="loginbody">
         <form role="login-form" onSubmit={handleFormSubmit}>
-          <h2 id="loginTitle">Login</h2>
 
           <input
             className="loginForm"
             type="text"
             id="username"
             placeholder="Username"
+            required
           />
 
           <input
@@ -89,6 +93,7 @@ function Login() {
             type="password"
             id="password"
             placeholder="Password"
+            required
           />
           <button
             id="submit-btn"
@@ -99,10 +104,17 @@ function Login() {
             Login
           </button>
         </form>
-        <p>
-          Don't have an account?
-          <span onClick={() => navigate("/register")}>Register</span>
-        </p>
+
+
+        <p
+        id="registerButton"
+        className="btn btn-primary btn-lg"
+        onClick={() => navigate("/register")}
+      >
+        Click to Register
+      </p>
+        
+
       </div>
     </main>
   );
