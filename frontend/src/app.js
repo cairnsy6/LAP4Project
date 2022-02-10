@@ -17,7 +17,7 @@ function App() {
   return (
     <div id="rootDiv">
       <Routes>
-        <Route exact path="/" element={<Register />} />
+        <Route exact path="/" element={<Login />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/competitions" element={<CompetitionList />} />
