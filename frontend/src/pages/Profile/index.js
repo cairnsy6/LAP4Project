@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 
 import { URL } from "../../serverUrl";
 import { NavBar } from "../../components";
-import "./style.css";
+import "./profile.css";
 
 function Profile() {
   const userDetails = useSelector((state) => state.currentUser);
@@ -39,18 +39,19 @@ function Profile() {
     console.log(compDetails);
   }, []);
 
-  const competitionsScores = compDetails ? (
+  const competitionScores = compDetails ? (
     compDetails.map((c) => {
       return (
-        <div key={c.id}>
-          <p onClick={() => navigate(`/competition/${c.id}`)}>{c.name}</p>
-          <p>{c.score.score}</p>
+        <div key={c.id} className="competition-table">
+          <h3 onClick={() => navigate(`/competition/${c.id}`)}>{c.name}</h3>
+          <h3>{c.score.score}</h3>
         </div>
       );
     })
   ) : (
     <></>
   );
+
   return (
     <div className="profile-page" aria-label="Profile">
       <NavBar />
@@ -58,20 +59,18 @@ function Profile() {
         Name: {userDetails.username}
       </h1>
       <Link to="/editprofile">
-        <button id="editProfileButton">Edit Profile?</button>
+        <button className="btn btn-lg btn-warning" id="editProfileButton">
+          Edit Profile
+        </button>
       </Link>
-
-      <h2 id="currentCompsTag" className="profile-name">
-        Current Competitions
-      </h2>
-
-      <div className="competition-table">
-        <h3> Competition name</h3>
-        {competitionsScores}
-        <h3> Score</h3>
+      <div id="competitionInfo">
+        <h2 id="currentCompsTag" className="profile-name">
+          Competitions
+        </h2>
+        {competitionScores}
       </div>
       <Link to="/create-competition">
-        <button id="create">
+        <button id="create" className="btn btn-lg btn-success">
           <span>Create a competition!</span>
         </button>
       </Link>

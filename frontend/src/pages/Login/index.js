@@ -8,8 +8,7 @@ import { NavBar } from "../../components";
 import "./login.css";
 
 function Login() {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -59,12 +58,14 @@ function Login() {
           type: "ERROR",
           payload: "Login not authorised",
         });
+        if (data["non_field_errors"]) {
+          setError("Incorrect username or password!");
+        }
       } else {
         localStorage.setItem("token", data.token);
         dispatch(login(data.user));
+        navigate(`/profile`, { replace: true });
       }
-
-      navigate(`/profile`, { replace: true });
     } catch (error) {
       console.warn(error);
     }
@@ -74,18 +75,34 @@ function Login() {
     <main className="loginmain" aria-label="loginmain">
       <NavBar />
       <div className="loginbody">
-        <form onSubmit={handleFormSubmit}>
+        <form role="login-form" onSubmit={handleFormSubmit}>
           <h2 id="loginTitle">Login</h2>
-          <label className="loginInputLabel" for="username">
-            Username
-          </label>
-          <input className="loginForm" type="text" id="username" />
-          <label className="loginInputLabel" for="password">
-            Password
-          </label>
-          <input className="loginForm" type="password" id="password" />
-          <input id="submit-btn" type="submit" value="Submit" />
+
+          <input
+            className="loginForm"
+            type="text"
+            id="username"
+            placeholder="Username"
+            required
+          />
+
+          <input
+            className="loginForm"
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <button
+            id="submit-btn"
+            className="btn-btn-lg btn-success"
+            type="submit"
+            value="Submit"
+          >
+            Login
+          </button>
         </form>
+        <p>{error}</p>
         <p>
           Don't have an account?
           <span onClick={() => navigate("/register")}>Register</span>

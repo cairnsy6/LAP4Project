@@ -5,7 +5,7 @@ import { requestLogin, logout, login } from "../../redux/actions/action";
 
 import { NavBar } from "../../components";
 import { URL } from "../../serverUrl";
-import "./style.css";
+import "./register.css";
 
 function Register() {
   const [error, setError] = useState("");
@@ -62,19 +62,41 @@ function Register() {
       <NavBar />
       <h1 id="registerTitle">Planet Pals</h1>
       <h4 id="slogan">Saving The World, One Competition At A Time</h4>
-      <h2>Register</h2>
       <form onSubmit={handleFormSubmit} aria-label="register-form">
-        <label htmlFor="username">Name</label>
-        <input type="username" name="username" id="username" />
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" />
-        <label htmlFor="passwordconfirm">Confirm password</label>
-        <input type="password" name="passwordconfirm" id="passwordconfirm" />
+        {/* <label htmlFor="username">Name</label> */}
+        <input
+          type="username"
+          name="username"
+          id="username"
+          placeholder="Username"
+          required
+        />
+        {/* <label htmlFor="email">Email</label> */}
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email"
+          required
+        />
+        {/* <label htmlFor="password">Password</label> */}
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        {/* <label htmlFor="passwordconfirm" id= "confirmPasswordLabel">Confirm Password</label> */}
+        <input
+          type="password"
+          name="passwordconfirm"
+          id="passwordconfirm"
+          placeholder="Confirm Password"
+          required
+        />
 
         {error && <p>{error}</p>}
-
 
         <input
           id="regbutton"
@@ -83,10 +105,14 @@ function Register() {
           value="Register"
           aria-label="register-button"
         />
-
       </form>
-      <p onClick={() => navigate("/login")}>
-        Already have an account? Click here to login
+      <p> OR</p>
+      <p
+        id="loginButton"
+        className="btn btn-primary btn-lg"
+        onClick={() => navigate("/login")}
+      >
+        Click to Login
       </p>
     </div>
   );

@@ -7,7 +7,7 @@ import "./style.css";
 
 // import { useDispatch } from "react-redux";
 
-function CompetitionListItem({ competition }) {
+function CompetitionListItem({ competition, inComp }) {
   const navigate = useNavigate();
 
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
@@ -23,7 +23,7 @@ function CompetitionListItem({ competition }) {
         user_id: userDetails.id,
         competition_id: competition.id,
         score: 0,
-        last_updated: "0000-00-00",
+        last_updated: "2000-01-01",
       };
       const options = {
         method: "POST",
@@ -35,31 +35,34 @@ function CompetitionListItem({ competition }) {
       };
       const response = await fetch(`${URL}/scores/`, options);
       const data = await response.json();
-      navigate(`/competition/:id`, { replace: true });
+      navigate(`/competition/${competition.id}`, { replace: true });
     } catch (error) {
       console.warn(error);
     }
   };
 
   return (
-    <div>
-      <ul>
-        <li>
-          <h3>
+    <div role="CompetitionListItem">
+        
+          <h3 id="h3item">
             <span
               id="competitionTitle"
               onClick={() => navigate(`/competition/${competition.id}`)}
             ></span>
             <span id="competitionName">{competition.name}</span>
             <span id="competitionDate">{dateReformatted}</span>
-            {isLoggedIn && (
-              <button id="competitionButton" onClick={handleJoinClick}>
+            {isLoggedIn && !inComp && (
+              <button
+                aria-label="competitionButton"
+                id="competitionButton"
+                onClick={handleJoinClick}
+              >
                 Join
               </button>
             )}
           </h3>
-        </li>
-      </ul>
+        
+      
     </div>
   );
 }

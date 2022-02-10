@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=Balsamiq+Sans:wght@700&family=Cabin&family=Dancing+Script:wght@400;500;700&family=Dongle&family=Lato:wght@300;400&family=Montserrat:wght@300;400&family=Noto+Sans&family=Poppins&family=Ubuntu&family=Varela+Round&display=swap');
+@media only screen and (max-width: 425px) and (min-width:0px) {
+ 
+  #rootDiv{ 
+    background-position: right 
+  }
+
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;  
+}
+
+:-ms-input-placeholder {  
+  text-align: center; 
+}
+
+body {
+    /* https://wallpapercave.com/wp/wp5701296.jpg */
+    /* https://static01.nyt.com/images/2020/02/12/opinion/12Ellis/12Ellis-superJumbo.jpg */
+    /* https://cdna.artstation.com/p/assets/images/images/005/070/188/large/tamas-notari-cartoon1.jpg?1488281714 -best one */
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/005/070/188/large/tamas-notari-cartoon1.jpg?1488281714");
+    background-size: cover;
+    background-position: right;
+    font-family: 'Poppins', sans-serif;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    text-align: center; 
+    height: 100vh;
+    width: 100%;
+}
+
+
+  
+@media only screen and (min-width: 426px) {
+    
+}

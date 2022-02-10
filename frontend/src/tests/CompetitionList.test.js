@@ -11,7 +11,13 @@ import { CompetitionList } from "../pages";
 import { store } from "../redux/store/store";
 
 describe("CompetitionList", () => {
+  global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve([{id: 1, name: "test name", description: "test desc", units: "test units", frquency:1, end_date: "2022-04-01"}])
+    })
+  );
   beforeAll(() => {
+    fetch.mockClear();
     render(
       <Provider store={store}>
         <CompetitionList />

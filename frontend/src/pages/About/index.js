@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { NavBar } from "../../components";
-import "./style.css";
+import "./about.css";
 function About() {
   return (
     <div id="aboutDiv">
       <NavBar />
       <div id="innerDiv">
         <h2 id="aboutTitle" aria-label="About">
-          About Us
+          Our Mission
         </h2>
         <p>
           Hellooooo, welcome to the Planet Pals. Tired of causing death and
