@@ -9,13 +9,21 @@
   width: 100%;
 }
 
+#slogan {
+  font-size: 1.25rem;
+  text-shadow: 1px 1px 1px black;
+  color: white;
+}
+#username{
+  margin-top: 10%;
+}
 .loginbody {
   
   background-position: right;
   display: block;
   flex-direction: column;
   align-items: center;
-  padding: 80px 50px;
+  
   margin: 10px;
   border-radius: 10px;
 
@@ -26,11 +34,18 @@
 .loginbody input {
   margin-bottom:2rem;
 }
+#dontP{
+  padding-top: 5%;
+}
+
+
 
 .loginForm {
+
   width: 100%;
   padding:5px; 
   margin-bottom: 7%;
+  
   box-shadow: 3px 3px 3px black;
   border-radius: 3rem;
   display: flex;
@@ -55,11 +70,20 @@
   height:50px ;
 }
 #loginTitle {
-  text-align: center;
-  font-size: 80px;
-  margin-top: -40px;
-  margin-bottom: 100px;
-  color:white;
-  text-shadow:4px 4px 4px  black;
+  font-family: "Poppins", sans-serif;
+  font-size: 90px;
+  font-display: center;
+  margin-top: 25px;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-shadow: 2px 2px 2px black;
+}
 
+#registerButton {
+  width: 80%;
+
+  margin-bottom: 5%;
+  text-shadow: 2px 2px 2px black;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 3rem;
 }
