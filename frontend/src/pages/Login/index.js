@@ -66,7 +66,7 @@ function Login() {
 						placeholder="Password"
 						required
 					/>
-					{error && <p>{error}</p>}
+					{error && <p className="errorText">{error}</p>}
 					<button id="submit-btn" className="btn-btn-lg btn-success" type="submit" value="Submit">
 						Login
 					</button>

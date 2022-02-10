@@ -179,20 +179,24 @@ function CompetitionLeaderboard() {
 
 	const manage = leaderboard.scores.length ? (
 		leaderboard.scores.map(u => {
-			return (
-				<div key={u.id}>
-					<p>{u.user.username}</p>
-					<button
-						className="btn btn-lg btn-success"
-						onClick={() => {
-							openRemoveUserWarning();
-							setUserToDeleteDetails(u);
-						}}
-					>
-						Remove participant
-					</button>
-				</div>
-			);
+			if (u.user.id !== userDetails.id) {
+				return (
+					<div className="manageParticipants" key={u.id}>
+          <div className="removeParticipant">
+						<p class="removeParticipantUsername">{u.user.username}</p>
+						<button
+							className="btn btn-lg btn-success removeParticipantButton"
+							onClick={() => {
+								openRemoveUserWarning();
+								setUserToDeleteDetails(u);
+							}}
+						>
+							X
+						</button>
+            </div>
+					</div>
+				);
+			}
 		})
 	) : (
 		<></>
@@ -238,7 +242,8 @@ function CompetitionLeaderboard() {
 														<>
 															<form aria-label="update-score" onSubmit={handleDailyUpdate}>
 																<label htmlFor="score-update">
-																	Did you achieve the goal of <br></br>{leaderboard.units} today?
+																	Did you achieve the goal of <br></br>
+																	{leaderboard.units} today?
 																</label>
 																<input
 																	id="score-update"
@@ -263,8 +268,8 @@ function CompetitionLeaderboard() {
 													<form onSubmit={handleTotallingUpdate}>
 														<label htmlFor="score-update">Add {leaderboard.units}</label>
 														<input
-                              id="score-update-box"
-                              className="form-check-input"
+															id="score-update-box"
+															className="form-check-input"
 															type="number"
 															name="score-update"
 															required
@@ -272,7 +277,7 @@ function CompetitionLeaderboard() {
 															onChange={handleTotalInput}
 														/>
 														<input
-                              id="updateScoreCompetition"
+															id="updateScoreCompetition"
 															className="btn btn-lg btn-success"
 															type="submit"
 															value="Update score"
@@ -280,18 +285,22 @@ function CompetitionLeaderboard() {
 													</form>
 												</>
 											)}
-                      <div className="leaderboardItemTable">
-							<h3 id="leaderboardTitleText">Leaderboard</h3>
-							{isLeaderboard ? <ol>{leaderboardDisplay}</ol> : <p>No scores to display</p>}
-              </div>
-              {!isUserHost &&
-											<button
-												className="btn btn-lg btn-danger leaveCompButton"
-												onClick={openLeaveCompetitionWarning}
-											>
-												Leave competition
-											</button>
-              }
+											<div className="leaderboardItemTable">
+												<h3 id="leaderboardTitleText">Leaderboard</h3>
+												{isLeaderboard ? (
+													<ol>{leaderboardDisplay}</ol>
+												) : (
+													<p>No scores to display</p>
+												)}
+											</div>
+											{!isUserHost && (
+												<button
+													className="btn btn-lg btn-danger leaveCompButton"
+													onClick={openLeaveCompetitionWarning}
+												>
+													Leave competition
+												</button>
+											)}
 										</>
 									) : (
 										<button onClick={handleJoinClick}>Join competition</button>
@@ -300,9 +309,12 @@ function CompetitionLeaderboard() {
 							) : (
 								<p>This competition is completed!</p>
 							)}
-							<p className="linkText">Share the link to invite others<br></br> to this competition!</p>
-             
-							<button className="btn btn-lg btn-success copyLinkButton"
+							<p className="linkText">
+								Share the link to invite others<br></br> to this competition!
+							</p>
+
+							<button
+								className="btn btn-lg btn-success copyLinkButton"
 								onClick={() => {
 									navigator.clipboard.writeText(window.location.href);
 								}}
@@ -323,12 +335,16 @@ function CompetitionLeaderboard() {
 					>
 						Manage participants
 					</button>
-					<div>{showManage && manage}</div>
-					<button className="btn btn-lg btn-danger deleteCompButton" onClick={() => openDeleteCompetitionWarning()}>
+					<button
+						className="btn btn-lg btn-danger deleteCompButton"
+						onClick={() => openDeleteCompetitionWarning()}
+					>
 						Delete Competition
 					</button>
+					{showManage && manage}
 				</div>
 			)}
+
 			<DeleteCompetitionWarning>
 				<div className="modalP">
 					<p>Are you sure you want to delete this competition?</p>
@@ -343,8 +359,6 @@ function CompetitionLeaderboard() {
 					</button>
 				</div>
 			</DeleteCompetitionWarning>
-
-			{/* Bethan */}
 
 			<LeaveCompetitionWarning>
 				<div className="modalP">
