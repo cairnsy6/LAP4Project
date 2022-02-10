@@ -181,17 +181,19 @@ function CompetitionLeaderboard() {
 		leaderboard.scores.map(u => {
 			if (u.user.id !== userDetails.id) {
 				return (
-					<div key={u.id}>
-						<p>{u.user.username}</p>
+					<div className="manageParticipants" key={u.id}>
+          <div className="removeParticipant">
+						<p class="removeParticipantUsername">{u.user.username}</p>
 						<button
-							className="btn btn-lg btn-success"
+							className="btn btn-lg btn-success removeParticipantButton"
 							onClick={() => {
 								openRemoveUserWarning();
 								setUserToDeleteDetails(u);
 							}}
 						>
-							Remove participant
+							X
 						</button>
+            </div>
 					</div>
 				);
 			}

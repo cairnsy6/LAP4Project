@@ -8,6 +8,7 @@
   font-size:35px;
 }
 #leaderboarddescriptionp{
+  margin-top: -1rem;
   font-size:30px;
 }
 
@@ -15,6 +16,7 @@
   width:50%;
   border-radius: 1rem;
   text-shadow: 2px 2px 2px black;
+  margin-top:-1rem;
 
 }
 
@@ -57,6 +59,7 @@
   height:20%;
   display: inline-block;
   margin-right: 2rem;
+  margin-top: -0.05rem;
 }
 
 .deleteCompButton{
@@ -64,6 +67,8 @@
   height: 20%;
   display: inline-block;
   background-color: rgb(233, 87, 111);
+  margin-top: -0.05rem;
+
 }
 
 .leaveCompButton{
@@ -75,7 +80,7 @@
   font-size:25px;
   font-weight:bold;
   text-shadow: 2px 2px 2px black;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom:-20px;
 }
 
@@ -84,3 +89,31 @@
   text-shadow: 2px 2px 2px black;
 }
 
+.manageParticipants{
+  position: float;
+  margin-left:-18rem;
+  margin-top: 7rem;
+}
+
+.removeParticipant{
+  display: inline-block;
+}
+
+.removeParticipantUsername{
+  display: inline-block;
+  font-size:20px;
+  margin-right: 3rem;
+  
+}
+
+.removeParticipantButton{
+  display: inline-block;
+  width: 43px;
+  height: 43px;
+  /* border-radius:1rem; */
+  background-color: red;
+  border:none;
+  font-size:1.3rem;
+  margin-top: -1rem;
+  margin-left: 6rem;
+}
