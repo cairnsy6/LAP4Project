@@ -56,7 +56,7 @@ function Profile() {
     <div className="profile-page" aria-label="Profile">
       <NavBar />
       <h1 id="nameTitle" className="profile-name">
-        Name: {userDetails.username}
+        {userDetails.username}
       </h1>
       <Link to="/editprofile">
         <button className="btn btn-lg btn-warning" id="editProfileButton">
