@@ -74,9 +74,11 @@ function Login() {
   return (
     <main className="loginmain" aria-label="loginmain">
       <NavBar />
+      <h1 id="loginTitle">Planet Pals</h1>
+      <h4 id="slogan">Saving The World, One Competition At A Time</h4>
+
       <div className="loginbody">
         <form role="login-form" onSubmit={handleFormSubmit}>
-          <h2 id="loginTitle">Login</h2>
 
           <input
             className="loginForm"
@@ -102,11 +104,17 @@ function Login() {
             Login
           </button>
         </form>
-        <p>{error}</p>
-        <p>
-          Don't have an account?
-          <span onClick={() => navigate("/register")}>Register</span>
-        </p>
+
+
+        <p
+        id="registerButton"
+        className="btn btn-primary btn-lg"
+        onClick={() => navigate("/register")}
+      >
+        Click to Register
+      </p>
+        
+
       </div>
     </main>
   );

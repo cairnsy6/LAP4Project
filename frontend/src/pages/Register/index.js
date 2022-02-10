@@ -60,8 +60,8 @@ function Register() {
   return (
     <div className="registerDiv">
       <NavBar />
-      <h1 id="registerTitle">Planet Pals</h1>
-      <h4 id="slogan">Saving The World, One Competition At A Time</h4>
+      <h2 id="registerTitle">Register</h2>
+
       <form onSubmit={handleFormSubmit} aria-label="register-form">
         {/* <label htmlFor="username">Name</label> */}
         <input
@@ -106,14 +106,10 @@ function Register() {
           aria-label="register-button"
         />
       </form>
-      <p> OR</p>
-      <p
-        id="loginButton"
-        className="btn btn-primary btn-lg"
-        onClick={() => navigate("/login")}
-      >
-        Click to Login
-      </p>
+  
+      <p id="dontP" onClick={() => navigate("/login")}>
+          Already have an account? Log In
+        </p>
     </div>
   );
 }
