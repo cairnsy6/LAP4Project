@@ -10,3 +10,18 @@
 #leaderboarddescriptionp{
   font-size:30px;
 }
+
+#updateScoreCompetition{
+  width:50%;
+  border-radius: 1rem;
+
+}
+
+#score-update{
+  width:80px;
+  height:80px;
+  display: block;
+  margin-left: 40%;
+  margin-top:1rem;
+  border-radius:3rem;
+}
