@@ -241,14 +241,14 @@ function CompetitionLeaderboard() {
 																	Did you achieve the goal of {leaderboard.units} today?
 																</label>
 																<input
-                                id="score-update"
+																	id="score-update"
 																	className="form-check-input"
 																	type="checkbox"
 																	name="score-update"
 																	required
 																/>
 																<input
-                                id="updateScoreCompetition"
+																	id="updateScoreCompetition"
 																	className="btn btn-lg btn-success"
 																	type="submit"
 																	value="Update score"
@@ -263,8 +263,8 @@ function CompetitionLeaderboard() {
 													<form onSubmit={handleTotallingUpdate}>
 														<label htmlFor="score-update">Add {leaderboard.units}</label>
 														<input
-                              id="score-update"
-                              className="form-control"
+															id="score-update"
+															className="form-control"
 															type="number"
 															name="score-update"
 															required
@@ -272,7 +272,7 @@ function CompetitionLeaderboard() {
 															onChange={handleTotalInput}
 														/>
 														<input
-                              id="updateScoreCompetition"
+															id="updateScoreCompetition"
 															className="btn btn-lg btn-primary"
 															type="submit"
 															value="Update score"
@@ -280,18 +280,22 @@ function CompetitionLeaderboard() {
 													</form>
 												</>
 											)}
-                      <div className="leaderboardItemTable">
-							<h3>Leaderboard</h3>
-							{isLeaderboard ? <ol>{leaderboardDisplay}</ol> : <p>No scores to display</p>}
-              </div>
-              {!isUserHost &&
-											<button
-												className="btn btn-lg btn-success"
-												onClick={openLeaveCompetitionWarning}
-											>
-												Leave competition
-											</button>
-              }
+											<div className="leaderboardItemTable">
+												<h3>Leaderboard</h3>
+												{isLeaderboard ? (
+													<ol>{leaderboardDisplay}</ol>
+												) : (
+													<p>No scores to display</p>
+												)}
+											</div>
+											{!isUserHost && (
+												<button
+													className="btn btn-lg btn-success"
+													onClick={openLeaveCompetitionWarning}
+												>
+													Leave competition
+												</button>
+											)}
 										</>
 									) : (
 										<button onClick={handleJoinClick}>Join competition</button>
@@ -300,14 +304,13 @@ function CompetitionLeaderboard() {
 							) : (
 								<p>This competition is completed!</p>
 							)}
-             
+
 							<p>Share the link to invite others to this competition!</p>
-             
+
 							<button
 								onClick={() => {
 									navigator.clipboard.writeText(window.location.href);
 								}}
-
 							>
 								Copy Link
 							</button>
@@ -326,7 +329,10 @@ function CompetitionLeaderboard() {
 						Manage participants
 					</button>
 					<div>{showManage && manage}</div>
-					<button className="btn btn-lg btn-success deleteCompButton" onClick={() => openDeleteCompetitionWarning()}>
+					<button
+						className="btn btn-lg btn-success deleteCompButton"
+						onClick={() => openDeleteCompetitionWarning()}
+					>
 						Delete Competition
 					</button>
 				</div>
