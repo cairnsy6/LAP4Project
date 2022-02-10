@@ -1,5 +1,27 @@
 #competitionLeaderboardDiv{
   color: white;
-  background: rgba(17, 124, 58, 0.3);
+  background: rgba(17, 124, 58, 0.1);
 
+}
+#leaderboardnameh2{
+  margin-top: 5%;
+  font-size:35px;
+}
+#leaderboarddescriptionp{
+  font-size:30px;
+}
+
+#updateScoreCompetition{
+  width:50%;
+  border-radius: 1rem;
+
+}
+
+#score-update{
+  width:80px;
+  height:80px;
+  display: block;
+  margin-left: 40%;
+  margin-top:1rem;
+  border-radius:3rem;
 }
