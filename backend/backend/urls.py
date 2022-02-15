@@ -17,23 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from api.views import UserView, CompetitionView, ScoreView
-from users.views import RegisterAPI, LoginAPI
+from users.views import RegisterAPI, LoginAPIView
 from knox import views as knox_views
 
 router = DefaultRouter()
 router.register(r'users', UserView, basename='user')
 router.register(r'competitions', CompetitionView, basename='competitions')
 router.register(r'scores', ScoreView, basename='scores')
-# router.register(r'register', RegisterAPI, basename='register')
 
 urlpatterns = [
     path('register/', RegisterAPI.as_view(), name='register'),
-    path('login/', LoginAPI.as_view(), name='login'),
+    path('login/', LoginAPIView.as_view(), name='login'),
     path('logout/', knox_views.LogoutView.as_view(), name='logout'),
     path('logoutall/', knox_views.LogoutAllView.as_view(), name='logoutall'),
 ]
 urlpatterns += router.urls
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('', include('api.urls'))
-# ]
