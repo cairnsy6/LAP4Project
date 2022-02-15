@@ -1,22 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
-
-# class User(models.Model):
-#     id = models.AutoField(primary_key=True)
-#     user_name = models.CharField(max_length=120,unique = True)
-#     email = models.EmailField(unique = True, null = False)
-#     password = models.CharField(max_length=100, null = False)
-#     account_type = models.IntegerField()
-
-#     def __str__(self):
-#         return f'{self.user_name}, {self.email}, {self.password}, {self.account_type}'
-
 
 class Competition(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=120, unique=True)
+    name = models.CharField(max_length=120)
     description = models.CharField(max_length=500)
     units = models.CharField(max_length=100)
     frequency = models.CharField(max_length=100)
@@ -37,7 +25,7 @@ class Score(models.Model):
     last_updated = models.DateField()
 
     class Meta:
-        ordering = ['score']
+        unique_together = ['competition_id', 'user_id']
 
     def __unicode__(self):
         return '%s' %(self.score)
